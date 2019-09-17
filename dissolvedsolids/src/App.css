@@ -1,0 +1,26 @@
+@font-face {
+  font-family: header;
+  src: url("./fonts/Righteous/Righteous-Regular.ttf");
+}
+
+.dSLogo {
+  font-family: header;
+  margin-top: 20px;
+  margin-left: 43px;
+}
+
+@media only screen and (max-width: 600px) {
+  .dSLogo {
+    font-size: 50px;
+  }
+}
+
+.cardd {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+.button {
+  color: black;
+}
