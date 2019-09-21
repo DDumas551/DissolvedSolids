@@ -1,47 +1,48 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./App.css";
+import HomePage from "./components/HomePage/HomePage";
+import LoginPage from "./components/LoginPage/LoginPage";
 
 function App() {
   return (
     <div className="App">
-      <p className="dSLogo">Dissolved Solids</p>
       <Row>
-        {/* <Col>
-          <Card className="cardd" style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src="https://d2ees1g486p7cy.cloudfront.net/media/mastheads/original_5uLqFsh7Rg30OyeBZ4n5FY19_SUMMER2B_WIFI-LANDING_NITRO-TRIO_Masthead-Desktop---1800x560_FINAL070419.jpg?v=63731299474"
-            />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
         <Col>
-          <Card className="cardd" style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src="https://d2ees1g486p7cy.cloudfront.net/media/mastheads/original_5uLqFsh7Rg30OyeBZ4n5FY19_SUMMER2B_WIFI-LANDING_NITRO-TRIO_Masthead-Desktop---1800x560_FINAL070419.jpg?v=63731299474"
-            />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col> */}
+          <Navbar bg="link" expand="lg">
+            <Navbar.Brand href="#home" className="dSLogo">
+              Dissolved Solids
+            </Navbar.Brand>
+          </Navbar>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <hr />
+        </Col>
+      </Row>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/LoginPage" component={LoginPage} />
+        </Switch>
+      </Router>
+
+      <Row className="copyright">
+        <Col>
+          <footer>
+            <center>Copyright {new Date().getFullYear()}©</center>
+          </footer>
+        </Col>
       </Row>
     </div>
   );

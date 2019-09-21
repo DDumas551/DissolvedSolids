@@ -1,3 +1,14 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+
 @font-face {
   font-family: header;
   src: url("./fonts/Righteous/Righteous-Regular.ttf");
@@ -5,22 +16,59 @@
 
 .dSLogo {
   font-family: header;
-  margin-top: 20px;
-  margin-left: 43px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
+  .dSLogo {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .dSLogo {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
   .dSLogo {
     font-size: 50px;
   }
 }
 
-.cardd {
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+@media only screen and (min-width: 1200px) {
+  .dSLogo {
+    font-size: 55px;
+  }
 }
 
-.button {
-  color: black;
+.homePageLink {
+  text-align: right;
+}
+
+hr {
+  max-width: 80%;
+}
+
+.text {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cardRow {
+  margin: 2%;
+}
+
+.cards {
+  text-align: center;
+  border: 1px solid black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.copyright {
+  position: sticky;
+  height: 40px;
 }
