@@ -36,7 +36,9 @@ class HomePage extends Component {
         </Row>
         <Row className="cardRow">
           <Col>
-            <p className="cards">Public recipes</p>
+            <Link to="PublicRecipes">
+              <p className="cards">Public recipes</p>
+            </Link>
           </Col>
 
           <Col>
@@ -45,7 +47,9 @@ class HomePage extends Component {
             </Link>
           </Col>
           <Col>
-            <p className="cards">Sign up</p>
+            <Link to="./SignUp">
+              <p className="cards">Sign up</p>
+            </Link>
           </Col>
         </Row>
       </div>

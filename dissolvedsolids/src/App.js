@@ -12,6 +12,10 @@ import Col from "react-bootstrap/Col";
 import "./App.css";
 import HomePage from "./components/HomePage/HomePage";
 import LoginPage from "./components/LoginPage/LoginPage";
+import AboutUs from "./components/AboutUs/AboutUs";
+import PublicRecipes from "./components/PublicRecipes/PublicRecipes";
+import SignUp from "./components/SignUp/SignUp";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -23,16 +27,18 @@ function App() {
               Dissolved Solids
             </Navbar.Brand>
           </Navbar>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
+          <p className="tagline">Brew Easy</p>
           <hr />
         </Col>
       </Row>
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/LoginPage" component={LoginPage} />
+          <Route exact path="/AboutUs" component={AboutUs} />
+          <Route exact path="/PublicRecipes" component={PublicRecipes} />
+          <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/LoginPage" component={LoginPage} />
           <Route exact path="/LoginPage" component={LoginPage} />
         </Switch>
       </Router>

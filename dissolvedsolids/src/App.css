@@ -14,8 +14,18 @@ body {
   src: url("./fonts/Righteous/Righteous-Regular.ttf");
 }
 
+@font-face {
+  font-family: lobster;
+  src: url("./fonts/Lobster/Lobster-Regular.ttf");
+}
+
 .dSLogo {
   font-family: header;
+}
+
+.tagline {
+  margin-left: 10vw;
+  font-family: lobster;
 }
 
 @media only screen and (max-width: 767px) {
