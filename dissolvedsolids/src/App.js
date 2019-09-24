@@ -15,6 +15,7 @@ import LoginPage from "./components/LoginPage/LoginPage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import PublicRecipes from "./components/PublicRecipes/PublicRecipes";
 import SignUp from "./components/SignUp/SignUp";
+import Calcs from "./components/Calcs/Calcs";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
           <Route exact path="/AboutUs" component={AboutUs} />
           <Route exact path="/PublicRecipes" component={PublicRecipes} />
           <Route exact path="/SignUp" component={SignUp} />
-          <Route exact path="/LoginPage" component={LoginPage} />
+          <Route exact path="/Calcs" component={Calcs} />
           <Route exact path="/LoginPage" component={LoginPage} />
         </Switch>
       </Router>

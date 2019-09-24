@@ -8,22 +8,16 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../LoginPage/LoginPage.css";
 import { Link } from "react-router-dom";
 
-class LoginPage extends Component {
+class CalcLink extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col></Col>
-        </Row>
-        <Link to="/">
-          <span>Home</span>
-        </Link>
+        <p>Link</p>
       </div>
     );
   }
 }
 
-export default LoginPage;
+export default CalcLink;

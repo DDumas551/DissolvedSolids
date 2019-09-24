@@ -51,6 +51,11 @@ class HomePage extends Component {
               <p className="cards">Sign up</p>
             </Link>
           </Col>
+          <Col>
+            <Link to="/Calcs">
+              <p className="cards">Brewing Calculators</p>
+            </Link>
+          </Col>
         </Row>
       </div>
     );
