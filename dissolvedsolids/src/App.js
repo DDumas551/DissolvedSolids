@@ -32,17 +32,22 @@ function App() {
           <hr />
         </Col>
       </Row>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/LoginPage" component={LoginPage} />
-          <Route exact path="/AboutUs" component={AboutUs} />
-          <Route exact path="/PublicRecipes" component={PublicRecipes} />
-          <Route exact path="/SignUp" component={SignUp} />
-          <Route exact path="/Calcs" component={Calcs} />
-          <Route exact path="/LoginPage" component={LoginPage} />
-        </Switch>
-      </Router>
+      <Row>
+        <Col>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/LoginPage" component={LoginPage} />
+              <Route exact path="/AboutUs" component={AboutUs} />
+              <Route exact path="/PublicRecipes" component={PublicRecipes} />
+              <Route exact path="/SignUp" component={SignUp} />
+              <Route exact path="/Calcs" component={Calcs} />
+              <Route exact path="/LoginPage" component={LoginPage} />
+            </Switch>
+          </Router>
+        </Col>
+        <Col></Col>
+      </Row>
 
       <Row className="copyright">
         <Col>

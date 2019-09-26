@@ -28,30 +28,19 @@ class HomePage extends Component {
           </Col>
         </Row>
         <Row className="cardRow">
-          <Col xs={{ span: 4, offset: 4 }}>
+          <Col>
             <Link to="/AboutUs">
               <p className="cards about">About Us</p>
             </Link>
-          </Col>
-        </Row>
-        <Row className="cardRow">
-          <Col>
             <Link to="PublicRecipes">
               <p className="cards">Public recipes</p>
             </Link>
-          </Col>
-
-          <Col>
             <Link to="/LoginPage">
               <p className="cards">Log in</p>
             </Link>
-          </Col>
-          <Col>
             <Link to="./SignUp">
               <p className="cards">Sign up</p>
             </Link>
-          </Col>
-          <Col>
             <Link to="/Calcs">
               <p className="cards">Brewing Calculators</p>
             </Link>
