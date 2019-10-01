@@ -10,6 +10,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import "../HomePage/HomePage.css";
+import Links from "./Links/Links";
 
 class HomePage extends Component {
   render() {
@@ -27,25 +28,7 @@ class HomePage extends Component {
             </p>
           </Col>
         </Row>
-        <Row className="cardRow">
-          <Col>
-            <Link to="/AboutUs">
-              <p className="cards about">About Us</p>
-            </Link>
-            <Link to="PublicRecipes">
-              <p className="cards">Public recipes</p>
-            </Link>
-            <Link to="/LoginPage">
-              <p className="cards">Log in</p>
-            </Link>
-            <Link to="./SignUp">
-              <p className="cards">Sign up</p>
-            </Link>
-            <Link to="/Calcs">
-              <p className="cards">Brewing Calculators</p>
-            </Link>
-          </Col>
-        </Row>
+        <Links />
       </div>
     );
   }

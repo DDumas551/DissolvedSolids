@@ -13,9 +13,11 @@ import { Link } from "react-router-dom";
 class CalcLink extends Component {
   render() {
     return (
-      <div>
-        <p>Link</p>
-      </div>
+      <>
+        <Link to={this.props.text}>
+          <p>{this.props.text}</p>
+        </Link>
+      </>
     );
   }
 }

@@ -6,14 +6,18 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
+import Accordion from "react-bootstrap/Accordion";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CalcLink from "./CalcLink/CalcLink";
 import "../Calcs/Calcs.css";
 import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ABV from "./CalcComps/GenCalcs/ABV/Abv";
 
 class Calcs extends Component {
   render() {
-    const GenCalcs = [
+    const genCalcs = [
       "ABV",
       "Hydrometer Temp",
       "IBU",
@@ -25,48 +29,96 @@ class Calcs extends Component {
       "Chaptalization",
       "LME and DME"
     ];
-    const allGrain = ["Mash", "", "", "", "", "", "", ""];
+    const allGrain = [
+      "Mash",
+      "All Grain OG/FG",
+      "Water Chem Basic",
+      "Water Chem Adv",
+      "Brewhouse Efficiency",
+      "Quick Infusion Calc"
+    ];
+    const extractBrewers = ["Extract OG/FG"];
+    const bPK = [
+      "Bottling",
+      "Priming",
+      "Keg Carb Chart",
+      "Force Carb Chart",
+      "Gyle and Krausen Priming"
+    ];
+    const wine = ["Brix and SG Converstions", "Wine Chaptalization"];
     return (
       <div>
         <Row>
           <Col>
-            <h4>General Calulators</h4>
-            <p>ABV</p>
-            <p>Hydrometer Temp</p>
-            <p>IBU</p>
-            <p>SRM</p>
-            <p>Dilution and Boil Off</p>
-            <p>Yeast Pitch Rate and Starter</p>
-            <p>Refractometer</p>
-            <p>Brix Converter</p>
-            <p>Chaptalization</p>
-            <p>LME and DME</p>
+            <Accordion defaultActiveKey="0">
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                  General Calculators
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    {genCalcs.sort().map(calc => (
+                      <CalcLink key={calc} text={calc} />
+                    ))}
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="1">
+                  All Grain
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="1">
+                  <Card.Body>
+                    {allGrain.sort().map(calc => (
+                      <CalcLink key={calc} text={calc} />
+                    ))}
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="2">
+                  Extract Brewers
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="2">
+                  <Card.Body>
+                    {extractBrewers.sort().map(calc => (
+                      <CalcLink key={calc} text={calc} />
+                    ))}
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="3">
+                  Bottling/Priming/Kegging
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="3">
+                  <Card.Body>
+                    {bPK.sort().map(calc => (
+                      <CalcLink key={calc} text={calc} />
+                    ))}
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="4">
+                  Wine Related Calcs
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="4">
+                  <Card.Body>
+                    {wine.sort().map(calc => (
+                      <CalcLink key={calc} text={calc} />
+                    ))}
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
           </Col>
           <Col>
-            <h4>All Grain Brewers</h4>
-            <p>Mash</p>
-            <p>All Grain OG/FG</p>
-            <p>Water Chemistry Basic</p>
-            <p>Water Chem Adv</p>
-            <p>Brewhouse Efficiency</p>
-            <p>Quick Infusion Calc</p>
-          </Col>
-          <Col>
-            <h4>Extract Brewers</h4>
-            <p>Extract OG/FG</p>
-          </Col>
-          <Col>
-            <h4>Bottling/Priming/Kegging</h4>
-            <p>Bottling</p>
-            <p>Priming</p>
-            <p>Keg Carbonation Chart</p>
-            <p>Force Carbonation Chart</p>
-            <p>Gyle and Krausen Priming</p>
-          </Col>
-          <Col>
-            <h4>Wine Related Calcs</h4>
-            <p>Brix and Specific Gravity Conversion</p>
-            <p>Chaptalization</p>
+            <Router>
+              <Switch>
+                <Route exact path="/ABV" component={ABV} />
+              </Switch>
+            </Router>
           </Col>
         </Row>
 
