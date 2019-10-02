@@ -43,11 +43,16 @@ function App() {
               <Route exact path="/PublicRecipes" component={PublicRecipes} />
               <Route exact path="/SignUp" component={SignUp} />
               <Route exact path="/Calcs" component={Calcs} />
-              <Route exact path="/LoginPage" component={LoginPage} />
             </Switch>
           </Router>
         </Col>
-        <Col></Col>
+        <Col>
+          {/* <Router>
+            <Switch>
+              <Route exact path="/AboutUs" />
+            </Switch>
+          </Router> */}
+        </Col>
       </Row>
 
       <Row className="copyright">

@@ -14,9 +14,47 @@ import "../Calcs/Calcs.css";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ABV from "./CalcComps/GenCalcs/ABV/Abv";
+import CalcLinkTest from "./CalcLinkTest/CalcLinkTest";
 
 class Calcs extends Component {
   render() {
+    const allCalcs = [
+      {
+        genCalcs: [
+          "ABV",
+          "Hydrometer Temp",
+          "IBU",
+          "SRM",
+          "Dilution and Boil Off",
+          "Yeast Pitch Rate and Starter",
+          "Refractometer",
+          "Brix Converter",
+          "Chaptalization",
+          "LME and DME"
+        ]
+      },
+      {
+        allGrain: [
+          "Mash",
+          "All Grain OG/FG",
+          "Water Chem Basic",
+          "Water Chem Adv",
+          "Brewhouse Efficiency",
+          "Quick Infusion Calc"
+        ]
+      },
+      { extractBrewers: ["Extract OG/FG"] },
+      {
+        bPK: [
+          "Bottling",
+          "Priming",
+          "Keg Carb Chart",
+          "Force Carb Chart",
+          "Gyle and Krausen Priming"
+        ]
+      },
+      { wine: ["Brix and SG Converstions", "Wine Chaptalization"] }
+    ];
     const genCalcs = [
       "ABV",
       "Hydrometer Temp",
@@ -50,7 +88,7 @@ class Calcs extends Component {
       <div>
         <Row>
           <Col>
-            <Accordion defaultActiveKey="0">
+            <Accordion>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
                   General Calculators
@@ -114,11 +152,9 @@ class Calcs extends Component {
             </Accordion>
           </Col>
           <Col>
-            <Router>
-              <Switch>
-                <Route exact path="/ABV" component={ABV} />
-              </Switch>
-            </Router>
+            <Accordion>
+              <CalcLinkTest info={allCalcs} />
+            </Accordion>
           </Col>
         </Row>
 
