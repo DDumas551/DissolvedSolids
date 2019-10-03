@@ -14,7 +14,7 @@ class CalcLink extends Component {
   render() {
     return (
       <>
-        <Link to={this.props.text}>
+        <Link to={this.props.text.replace(/\s/g, "")}>
           <p>{this.props.text}</p>
         </Link>
       </>

@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
 import Accordion from "react-bootstrap/Accordion";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -20,7 +14,9 @@ class Calcs extends Component {
   render() {
     const allCalcs = [
       {
-        genCalcs: [
+        id: 0,
+        calcName: "General Calculators",
+        theCalcs: [
           "ABV",
           "Hydrometer Temp",
           "IBU",
@@ -34,18 +30,22 @@ class Calcs extends Component {
         ]
       },
       {
-        allGrain: [
+        id: 1,
+        calcName: "All Grain",
+        theCalcs: [
           "Mash",
-          "All Grain OG/FG",
+          "All Grain OG FG",
           "Water Chem Basic",
           "Water Chem Adv",
           "Brewhouse Efficiency",
           "Quick Infusion Calc"
         ]
       },
-      { extractBrewers: ["Extract OG/FG"] },
+      { id: 2, calcName: "Extract Brewers", theCalcs: ["Extract OG FG"] },
       {
-        bPK: [
+        id: 3,
+        calcName: "Bottling Priming Kegging",
+        theCalcs: [
           "Bottling",
           "Priming",
           "Keg Carb Chart",
@@ -53,7 +53,11 @@ class Calcs extends Component {
           "Gyle and Krausen Priming"
         ]
       },
-      { wine: ["Brix and SG Converstions", "Wine Chaptalization"] }
+      {
+        id: 4,
+        calcName: "Wine",
+        theCalcs: ["Brix and SG Converstions", "Wine Chaptalization"]
+      }
     ];
     const genCalcs = [
       "ABV",
@@ -69,13 +73,13 @@ class Calcs extends Component {
     ];
     const allGrain = [
       "Mash",
-      "All Grain OG/FG",
+      "All Grain OG FG",
       "Water Chem Basic",
       "Water Chem Adv",
       "Brewhouse Efficiency",
       "Quick Infusion Calc"
     ];
-    const extractBrewers = ["Extract OG/FG"];
+    const extractBrewers = ["Extract OG FG"];
     const bPK = [
       "Bottling",
       "Priming",
@@ -87,7 +91,7 @@ class Calcs extends Component {
     return (
       <div>
         <Row>
-          <Col>
+          <Col xs={4}>
             <Accordion>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -150,15 +154,12 @@ class Calcs extends Component {
                 </Accordion.Collapse>
               </Card>
             </Accordion>
+            <Link to="/Home">
+              <p>Home</p>
+            </Link>
           </Col>
-          <Col>
-            <Accordion>
-              <CalcLinkTest info={allCalcs} />
-            </Accordion>
-          </Col>
+          <Col></Col>
         </Row>
-
-        <Link to="/">Home</Link>
       </div>
     );
   }

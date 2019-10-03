@@ -54,9 +54,6 @@ class AboutUs extends Component {
             </p>
           </Col>
         </Row>
-        <Link to="/">
-          <p className="back">Back to home</p>
-        </Link>
       </div>
     );
   }

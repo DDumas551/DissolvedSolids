@@ -12,7 +12,7 @@ class CalcLinkTest extends Component {
             <Accordion.Toggle
               key={card}
               as={Card.Header}
-              eventKey={this.props.info.indexOf({ card })}
+              eventKey={this.props.info.indexOf(this.props.info)}
             >
               Other Accordion
             </Accordion.Toggle>

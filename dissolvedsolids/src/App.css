@@ -60,11 +60,22 @@ hr {
   max-width: 80%;
 }
 
+.links {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+}
+
 .text {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 20px;
   text-align: center;
+}
+
+.linkStyle {
+  text-decoration: none;
+  color: black;
 }
 
 .cardRow {

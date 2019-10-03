@@ -28,7 +28,13 @@ class HomePage extends Component {
             </p>
           </Col>
         </Row>
-        <Links />
+        <Row>
+          <Col>
+            <Link to="/Home">
+              <p className="text">Continue</p>
+            </Link>
+          </Col>
+        </Row>
       </div>
     );
   }

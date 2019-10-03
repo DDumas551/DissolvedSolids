@@ -16,9 +16,6 @@ class SignUp extends Component {
     return (
       <div>
         <p>SignUp</p>
-        <Link to="/">
-          <p>Home</p>
-        </Link>
       </div>
     );
   }

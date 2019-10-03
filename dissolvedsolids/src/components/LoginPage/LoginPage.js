@@ -15,12 +15,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col></Col>
-        </Row>
-        <Link to="/">
-          <span>Home</span>
-        </Link>
+        <p>Login</p>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -17,6 +17,7 @@ import PublicRecipes from "./components/PublicRecipes/PublicRecipes";
 import SignUp from "./components/SignUp/SignUp";
 import Calcs from "./components/Calcs/Calcs";
 import ABV from "./components/Calcs/CalcComps/GenCalcs/ABV/Abv";
+import Home from "./components/Home/Home";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -33,7 +34,14 @@ function App() {
           <hr />
         </Col>
       </Row>
-      <Row>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/Calcs" component={Calcs} />
+        </Switch>
+      </Router>
+      {/* <Row>
         <Col>
           <Router>
             <Switch>
@@ -47,13 +55,8 @@ function App() {
           </Router>
         </Col>
         <Col>
-          {/* <Router>
-            <Switch>
-              <Route exact path="/AboutUs" />
-            </Switch>
-          </Router> */}
         </Col>
-      </Row>
+      </Row> */}
 
       <Row className="copyright">
         <Col>
