@@ -7,16 +7,12 @@ class CalcLinkTest extends Component {
     console.log(this.props.info);
     return (
       <div>
-        {this.props.info.map(card => (
-          <Card>
-            <Accordion.Toggle
-              key={card}
-              as={Card.Header}
-              eventKey={this.props.info.indexOf(this.props.info)}
-            >
-              Other Accordion
+        {this.props.info.map(accord => (
+          <Card key={accord}>
+            <Accordion.Toggle as={Card.Header} eventKey={this.props.info.id}>
+              {this.props.info.calcName}
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
+            <Accordion.Collapse eventKey={this.props.info}>
               <Card.Body>
                 <p>Hello</p>
               </Card.Body>

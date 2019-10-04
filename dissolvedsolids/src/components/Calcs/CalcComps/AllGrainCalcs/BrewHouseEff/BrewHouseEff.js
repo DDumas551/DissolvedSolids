@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class BrewHouseEff extends Component {
+class BrewhouseEff extends Component {
   render() {
     return (
       <div>
-        <p>BrewHouseEff</p>
+        <p>BrewhouseEff</p>
       </div>
     );
   }
 }
 
-export default BrewHouseEff;
+export default BrewhouseEff;
