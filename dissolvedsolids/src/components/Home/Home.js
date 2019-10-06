@@ -9,6 +9,7 @@ import PublicRecipies from "../PublicRecipes/PublicRecipes";
 import NewToBrewing from "../NewToBrewing/NewToBrewing";
 import SignUp from "../SignUp/SignUp";
 import LoginPage from "../LoginPage/LoginPage";
+import GeneralCheckLists from "../GeneralCheckLists/GeneralCheckLists";
 
 class Home extends Component {
   render() {
@@ -17,6 +18,11 @@ class Home extends Component {
         <Router>
           <Switch>
             <Route exact path="/Calcs" component={Calcs} />
+            <Route
+              exact
+              path="/GeneralCheckLists"
+              component={GeneralCheckLists}
+            />
             <Row>
               <Col xs={3}>
                 <Link to="/Home/AboutUs">
@@ -30,6 +36,9 @@ class Home extends Component {
                 </Link>
                 <Link to="/Calcs">
                   <p className="text linkStyle">Calculators</p>
+                </Link>
+                <Link to="/GeneralCheckLists">
+                  <p className="text linkStyle">General Check Lists</p>
                 </Link>
                 <Link to="/Home/SignUp">
                   <p className="text linkStyle">Sign Up</p>

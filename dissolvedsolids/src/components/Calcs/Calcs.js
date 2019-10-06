@@ -8,6 +8,21 @@ import "../Calcs/Calcs.css";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CalcLinkTest from "./CalcLinkTest/CalcLinkTest";
+// All Grain
+import AllGrainOGFG from "./CalcComps/AllGrainCalcs/AllGrainOGFG/AllGrainOGFG";
+import BrewhouseEff from "./CalcComps/AllGrainCalcs/BrewhouseEff/BrewhouseEff";
+import Mash from "./CalcComps/AllGrainCalcs/Mash/Mash";
+import QuickInfusion from "./CalcComps/AllGrainCalcs/QuickInfusion/QuickInfusion";
+import AdvWaterChem from "./CalcComps/AllGrainCalcs/AdvWaterChem/AdvWaterChem";
+import BasicWaterChem from "./CalcComps/AllGrainCalcs/BasicWaterChem/BasicWaterChem";
+// BPKegging
+import Bottling from "./CalcComps/BottlingPrimingKegging/Bottling/Bottling";
+import ForceCarb from "./CalcComps/BottlingPrimingKegging/ForceCarbing/ForceCarb";
+import GyleAndKrausenPriming from "./CalcComps/BottlingPrimingKegging/GyleAndKrausen/GyleAndKrausenPriming";
+import KegCarb from "./CalcComps/BottlingPrimingKegging/KegCarb/KegCarb";
+import Priming from "./CalcComps/BottlingPrimingKegging/Priming/Priming";
+// Extract brew
+import ExtractOGFG from "./CalcComps/ExtractBrewers/ExtractBrewers/ExtractOGFG";
 // General Calcs
 import ABV from "./CalcComps/GenCalcs/ABV/ABV";
 import BrixConverter from "./CalcComps/GenCalcs/BrixConverter/BrixConverter";
@@ -22,21 +37,6 @@ import YeastPitchRateAndStarter from "./CalcComps/GenCalcs/YeastPitchAndStarter/
 // Wine
 import WineChaptalization from "./CalcComps/WineRelated/WineChaptalization/WineChaptalization";
 import BrixAndSG from "./CalcComps/WineRelated/BrixAndSG/BrixAndSG";
-// BPKegging
-import Bottling from "./CalcComps/BottlingPrimingKegging/Bottling/Bottling";
-import ForceCarb from "./CalcComps/BottlingPrimingKegging/ForceCarbing/ForceCarb";
-import GyleAndKrausenPriming from "./CalcComps/BottlingPrimingKegging/GyleAndKrausen/GyleAndKrausenPriming";
-import KegCarb from "./CalcComps/BottlingPrimingKegging/KegCarb/KegCarb";
-import Priming from "./CalcComps/BottlingPrimingKegging/Priming/Priming";
-// Extract brew
-import ExtractOGFG from "./CalcComps/ExtractBrewers/ExtractBrewers/ExtractOGFG";
-// All Grain
-import AllGrainOGFG from "./CalcComps/AllGrainCalcs/AllGrainOGFG/AllGrainOGFG";
-import BrewhouseEff from "./CalcComps/AllGrainCalcs/BrewhouseEff/BrewhouseEff";
-import Mash from "./CalcComps/AllGrainCalcs/Mash/Mash";
-import QuickInfusion from "./CalcComps/AllGrainCalcs/QuickInfusion/QuickInfusion";
-import AdvWaterChem from "./CalcComps/AllGrainCalcs/AdvWaterChem/AdvWaterChem";
-import BasicWaterChem from "./CalcComps/AllGrainCalcs/BasicWaterChem/BasicWaterChem";
 
 class Calcs extends Component {
   render() {
@@ -127,22 +127,6 @@ class Calcs extends Component {
                     <Accordion.Toggle
                       className="userSelect"
                       as={Card.Header}
-                      eventKey="0"
-                    >
-                      General Calculators
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="0">
-                      <Card.Body>
-                        {genCalcs.sort().map(calc => (
-                          <CalcLink key={calc} text={calc} />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle
-                      className="userSelect"
-                      as={Card.Header}
                       eventKey="1"
                     >
                       All Grain
@@ -150,22 +134,6 @@ class Calcs extends Component {
                     <Accordion.Collapse eventKey="1">
                       <Card.Body>
                         {allGrain.sort().map(calc => (
-                          <CalcLink key={calc} text={calc} />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle
-                      className="userSelect"
-                      as={Card.Header}
-                      eventKey="2"
-                    >
-                      Extract Brewers
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="2">
-                      <Card.Body>
-                        {extractBrewers.sort().map(calc => (
                           <CalcLink key={calc} text={calc} />
                         ))}
                       </Card.Body>
@@ -191,6 +159,38 @@ class Calcs extends Component {
                     <Accordion.Toggle
                       className="userSelect"
                       as={Card.Header}
+                      eventKey="2"
+                    >
+                      Extract Brewers
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="2">
+                      <Card.Body>
+                        {extractBrewers.sort().map(calc => (
+                          <CalcLink key={calc} text={calc} />
+                        ))}
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle
+                      className="userSelect"
+                      as={Card.Header}
+                      eventKey="0"
+                    >
+                      General Calculators
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                      <Card.Body>
+                        {genCalcs.sort().map(calc => (
+                          <CalcLink key={calc} text={calc} />
+                        ))}
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle
+                      className="userSelect"
+                      as={Card.Header}
                       eventKey="4"
                     >
                       Wine Related Calcs
@@ -204,11 +204,56 @@ class Calcs extends Component {
                     </Accordion.Collapse>
                   </Card>
                 </Accordion>
-                <Link to="/Home">
-                  <p>Home</p>
-                </Link>
               </Col>
               <Col>
+                {/* All Grain */}
+                <Route
+                  exact
+                  path="/Calcs/AllGrainOGFG"
+                  component={AllGrainOGFG}
+                />
+                <Route
+                  exact
+                  path="/Calcs/BrewhouseEfficiency"
+                  component={BrewhouseEff}
+                />
+                <Route
+                  exact
+                  path="/Calcs/WaterChemAdv"
+                  component={AdvWaterChem}
+                />
+                <Route
+                  exact
+                  path="/Calcs/WaterChemBasic"
+                  component={BasicWaterChem}
+                />
+                <Route exact path="/Calcs/Mash" component={Mash} />
+                <Route
+                  exact
+                  path="/Calcs/QuickInfusionCalc"
+                  component={QuickInfusion}
+                />
+                {/* Bottling/Kegging */}
+                <Route exact path="/Calcs/Bottling" component={Bottling} />
+                <Route
+                  exact
+                  path="/Calcs/ForceCarbChart"
+                  component={ForceCarb}
+                />
+                <Route
+                  exact
+                  path="/Calcs/GyleAndKrausenPriming"
+                  component={GyleAndKrausenPriming}
+                />
+                <Route exact path="/Calcs/KegCarbChart" component={KegCarb} />
+                <Route exact path="/Calcs/Priming" component={Priming} />
+
+                {/* Extract Brewers */}
+                <Route
+                  exact
+                  path="/Calcs/ExtractOGFG"
+                  component={ExtractOGFG}
+                />
                 {/* General Calcs */}
                 <Route exact path="/Calcs/ABV" component={ABV} />
                 <Route
@@ -255,53 +300,7 @@ class Calcs extends Component {
                   path="/Calcs/WineChaptalization"
                   component={WineChaptalization}
                 />
-                {/* Bottling/Kegging */}
-                <Route exact path="/Calcs/Bottling" component={Bottling} />
-                <Route
-                  exact
-                  path="/Calcs/ForceCarbChart"
-                  component={ForceCarb}
-                />
-                <Route
-                  exact
-                  path="/Calcs/GyleAndKrausenPriming"
-                  component={GyleAndKrausenPriming}
-                />
-                <Route exact path="/Calcs/KegCarbChart" component={KegCarb} />
-                <Route exact path="/Calcs/Priming" component={Priming} />
-                {/* All Grain */}
-                <Route
-                  exact
-                  path="/Calcs/AllGrainOGFG"
-                  component={AllGrainOGFG}
-                />
-                <Route
-                  exact
-                  path="/Calcs/BrewhouseEfficiency"
-                  component={BrewhouseEff}
-                />
-                <Route
-                  exact
-                  path="/Calcs/WaterChemAdv"
-                  component={AdvWaterChem}
-                />
-                <Route
-                  exact
-                  path="/Calcs/WaterChemBasic"
-                  component={BasicWaterChem}
-                />
-                <Route exact path="/Calcs/Mash" component={Mash} />
-                <Route
-                  exact
-                  path="/Calcs/QuickInfusionCalc"
-                  component={QuickInfusion}
-                />
-                {/* Extract Brewers */}
-                <Route
-                  exact
-                  path="/Calcs/ExtractOGFG"
-                  component={ExtractOGFG}
-                />
+
                 {/* <Accordion>
               <CalcLinkTest key={allCalcs.id} info={allCalcs} />
             </Accordion> */}
@@ -309,6 +308,13 @@ class Calcs extends Component {
             </Row>
           </Switch>
         </Router>
+        <Row>
+          <Col>
+            <Link to="/Home">
+              <p>Home</p>
+            </Link>
+          </Col>
+        </Row>
       </div>
     );
   }

@@ -7,6 +7,7 @@ import "./App.css";
 import HomePage from "./components/HomePage/HomePage";
 import Calcs from "./components/Calcs/Calcs";
 import Home from "./components/Home/Home";
+import GeneralCheckLists from "./components/GeneralCheckLists/GeneralCheckLists";
 
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/Home" component={Home} />
           <Route exact path="/Calcs" component={Calcs} />
+          <Route
+            exact
+            path="/GeneralCheckLists"
+            component={GeneralCheckLists}
+          />
         </Switch>
       </Router>
       <Row className="copyright">
