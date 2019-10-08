@@ -2,33 +2,15 @@ import React, { Component } from "react";
 import Table from "react-bootstrap/Table";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "./BrewingEquiptment.css";
 
-class BrewingEquiptment extends Component {
+class BrewPrep extends Component {
   render() {
-    const brewingEquiptment = [
-      "Hydrometer",
-      "Sanitizer",
-      "Propane",
-      "Fermenter or Carboy",
-      "Kettle",
-      "Airlock",
-      "Hop Socks",
-      "Brewing Spoon",
-      "Paper Towels",
-      "Malts",
-      "Yeast",
-      "Hops",
-      "Thermometer",
-      "Sanitizer Spray Bottle",
-      "Powdered Brewery Cleaner",
-      "Rubber Stopper for Airlock",
-      "Various Brushes",
-      "Scissors",
-      "Colander",
-      "Funnel"
+    const BrewPrepSteps = [
+      "Future Stuff",
+      "Other Stuff",
+      "More Stuff",
+      "Even More Stuff"
     ];
-
     return (
       <div>
         <Row>
@@ -36,45 +18,47 @@ class BrewingEquiptment extends Component {
             <Table striped bordered hover size="sm">
               <thead>
                 <tr>
-                  <th>Item</th>
-                  <th className="text-center">Have</th>
+                  <th>Action</th>
+                  <th className="text-center">Done</th>
                   <th className="text-center">Don't Need</th>
                 </tr>
               </thead>
               <tbody>
                 {/* Figure out how to disable one box when other is checked */}
                 {/* document.getElementById("checkBox").disabled=true; */}
-                {brewingEquiptment.sort().map(item => (
+                {BrewPrepSteps.map(action => (
                   <tr>
-                    <td>{item}</td>
+                    <td>{action}</td>
                     <td className="checks text-center">
                       <input
-                        id={`a${item.replace(/\s/g, "")}`}
+                        id={`a${action.replace(/\s/g, "")}`}
                         type="checkbox"
                         onClick={() =>
-                          document.getElementById(`z${item.replace(/\s/g, "")}`)
-                            .disabled === false
+                          document.getElementById(
+                            `z${action.replace(/\s/g, "")}`
+                          ).disabled === false
                             ? (document.getElementById(
-                                `z${item.replace(/\s/g, "")}`
+                                `z${action.replace(/\s/g, "")}`
                               ).disabled = true)
                             : (document.getElementById(
-                                `z${item.replace(/\s/g, "")}`
+                                `z${action.replace(/\s/g, "")}`
                               ).disabled = false)
                         }
                       />
                     </td>
                     <td className="checks text-center">
                       <input
-                        id={`z${item.replace(/\s/g, "")}`}
+                        id={`z${action.replace(/\s/g, "")}`}
                         type="checkbox"
                         onClick={() =>
-                          document.getElementById(`a${item.replace(/\s/g, "")}`)
-                            .disabled === false
+                          document.getElementById(
+                            `a${action.replace(/\s/g, "")}`
+                          ).disabled === false
                             ? (document.getElementById(
-                                `a${item.replace(/\s/g, "")}`
+                                `a${action.replace(/\s/g, "")}`
                               ).disabled = true)
                             : (document.getElementById(
-                                `a${item.replace(/\s/g, "")}`
+                                `a${action.replace(/\s/g, "")}`
                               ).disabled = false)
                         }
                       />
@@ -91,4 +75,4 @@ class BrewingEquiptment extends Component {
   }
 }
 
-export default BrewingEquiptment;
+export default BrewPrep;
