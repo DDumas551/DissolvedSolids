@@ -7,7 +7,6 @@ import CalcLink from "./CalcLink/CalcLink";
 import "../Calcs/Calcs.css";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import CalcLinkTest from "./CalcLinkTest/CalcLinkTest";
 // All Grain
 import AllGrainOGFG from "./CalcComps/AllGrainCalcs/AllGrainOGFG/AllGrainOGFG";
 import BrewhouseEff from "./CalcComps/AllGrainCalcs/BrewhouseEff/BrewhouseEff";
@@ -40,53 +39,53 @@ import BrixAndSG from "./CalcComps/WineRelated/BrixAndSG/BrixAndSG";
 
 class Calcs extends Component {
   render() {
-    const allCalcs = [
-      {
-        id: 0,
-        calcName: "General Calculators",
-        theCalcs: [
-          "ABV",
-          "Hydrometer Temp",
-          "IBU",
-          "SRM",
-          "Dilution and Boil Off",
-          "Yeast Pitch Rate and Starter",
-          "Refractometer",
-          "Brix Converter",
-          "Chaptalization",
-          "LME and DME"
-        ]
-      },
-      {
-        id: 1,
-        calcName: "All Grain",
-        theCalcs: [
-          "Mash",
-          "All Grain OG FG",
-          "Water Chem Basic",
-          "Water Chem Adv",
-          "Brewhouse Efficiency",
-          "Quick Infusion Calc"
-        ]
-      },
-      { id: 2, calcName: "Extract Brewers", theCalcs: ["Extract OG FG"] },
-      {
-        id: 3,
-        calcName: "Bottling Priming Kegging",
-        theCalcs: [
-          "Bottling",
-          "Priming",
-          "Keg Carb Chart",
-          "Force Carb Chart",
-          "Gyle and Krausen Priming"
-        ]
-      },
-      {
-        id: 4,
-        calcName: "Wine",
-        theCalcs: ["Brix and SG Converstions", "Wine Chaptalization"]
-      }
-    ];
+    // const allCalcs = [
+    //   [{
+    //     id: 0,
+    //     calcName: "General Calculators",
+    //     theCalcs: [
+    //       "ABV",
+    //       "Hydrometer Temp",
+    //       "IBU",
+    //       "SRM",
+    //       "Dilution and Boil Off",
+    //       "Yeast Pitch Rate and Starter",
+    //       "Refractometer",
+    //       "Brix Converter",
+    //       "Chaptalization",
+    //       "LME and DME"
+    //     ]
+    //   }],
+    //   [{
+    //     id: 1,
+    //     calcName: "All Grain",
+    //     theCalcs: [
+    //       "Mash",
+    //       "All Grain OG FG",
+    //       "Water Chem Basic",
+    //       "Water Chem Adv",
+    //       "Brewhouse Efficiency",
+    //       "Quick Infusion Calc"
+    //     ]
+    //   }],
+    //   [{ id: 2, calcName: "Extract Brewers", theCalcs: ["Extract OG FG"] }],
+    //   [{
+    //     id: 3,
+    //     calcName: "Bottling Priming Kegging",
+    //     theCalcs: [
+    //       "Bottling",
+    //       "Priming",
+    //       "Keg Carb Chart",
+    //       "Force Carb Chart",
+    //       "Gyle and Krausen Priming"
+    //     ]
+    //   }],
+    //   [{
+    //     id: 4,
+    //     calcName: "Wine",
+    //     theCalcs: ["Brix and SG Converstions", "Wine Chaptalization"]
+    //   }]
+    // ];
     const genCalcs = [
       "ABV",
       "Hydrometer Temp",
