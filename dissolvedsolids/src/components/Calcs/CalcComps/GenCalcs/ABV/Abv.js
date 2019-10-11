@@ -22,11 +22,7 @@ class ABV extends Component {
         [event.target.name]: event.target.value
       });
     };
-    // const handleFGChange = event => {
-    //   this.setState({
-    //     fg: event.target.value
-    //   });
-    // };
+
     return (
       <div>
         {/* Specific Gravity */}
@@ -77,7 +73,7 @@ class ABV extends Component {
         </Row>
         <Row>
           <Col>
-            <p>Original Gravity</p>
+            <p>Original Deg Plato</p>
             <input
               id="originalGravity"
               type="number"
@@ -90,7 +86,7 @@ class ABV extends Component {
             />
           </Col>
           <Col>
-            <p>Final Gravity</p>
+            <p>Final Deg Plato</p>
             <input
               id="finalGravity"
               type="number"

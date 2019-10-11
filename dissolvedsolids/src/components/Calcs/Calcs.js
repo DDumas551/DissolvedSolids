@@ -39,53 +39,49 @@ import BrixAndSG from "./CalcComps/WineRelated/BrixAndSG/BrixAndSG";
 
 class Calcs extends Component {
   render() {
-    // const allCalcs = [
-    //   [{
-    //     id: 0,
-    //     calcName: "General Calculators",
-    //     theCalcs: [
-    //       "ABV",
-    //       "Hydrometer Temp",
-    //       "IBU",
-    //       "SRM",
-    //       "Dilution and Boil Off",
-    //       "Yeast Pitch Rate and Starter",
-    //       "Refractometer",
-    //       "Brix Converter",
-    //       "Chaptalization",
-    //       "LME and DME"
-    //     ]
-    //   }],
-    //   [{
-    //     id: 1,
-    //     calcName: "All Grain",
-    //     theCalcs: [
-    //       "Mash",
-    //       "All Grain OG FG",
-    //       "Water Chem Basic",
-    //       "Water Chem Adv",
-    //       "Brewhouse Efficiency",
-    //       "Quick Infusion Calc"
-    //     ]
-    //   }],
-    //   [{ id: 2, calcName: "Extract Brewers", theCalcs: ["Extract OG FG"] }],
-    //   [{
-    //     id: 3,
-    //     calcName: "Bottling Priming Kegging",
-    //     theCalcs: [
-    //       "Bottling",
-    //       "Priming",
-    //       "Keg Carb Chart",
-    //       "Force Carb Chart",
-    //       "Gyle and Krausen Priming"
-    //     ]
-    //   }],
-    //   [{
-    //     id: 4,
-    //     calcName: "Wine",
-    //     theCalcs: ["Brix and SG Converstions", "Wine Chaptalization"]
-    //   }]
-    // ];
+    const allCalcs = [
+      [
+        0,
+        "General Calculators",
+        [
+          "ABV",
+          "Hydrometer Temp",
+          "IBU",
+          "SRM",
+          "Dilution and Boil Off",
+          "Yeast Pitch Rate and Starter",
+          "Refractometer",
+          "Brix Converter",
+          "Chaptalization",
+          "LME and DME"
+        ]
+      ],
+      [
+        1,
+        "All Grain",
+        [
+          "Mash",
+          "All Grain OG FG",
+          "Water Chem Basic",
+          "Water Chem Adv",
+          "Brewhouse Efficiency",
+          "Quick Infusion Calc"
+        ]
+      ],
+      [2, "Extract Brewers", ["Extract OG FG"]],
+      [
+        3,
+        "Bottling Priming Kegging",
+        [
+          "Bottling",
+          "Priming",
+          "Keg Carb Chart",
+          "Force Carb Chart",
+          "Gyle and Krausen Priming"
+        ]
+      ],
+      [4, "Wine", ["Brix and SG Converstions", "Wine Chaptalization"]]
+    ];
     const genCalcs = [
       "ABV",
       "Hydrometer Temp",
