@@ -44,7 +44,7 @@ class BrewhouseEff extends Component {
                     id="measuredGravity"
                     type="number"
                     name="measuredGravity"
-                    value={this.state.measuredGravity}
+                    value={z.measuredGravity}
                     min="1"
                     max="299"
                     step="1"
@@ -65,7 +65,7 @@ class BrewhouseEff extends Component {
                     id="measuredVolume"
                     type="number"
                     name="measuredVolume"
-                    value={this.state.measuredVolume}
+                    value={z.measuredVolume}
                     min="0.0"
                     max="999999"
                     step="0.1"
