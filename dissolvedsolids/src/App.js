@@ -10,6 +10,7 @@ import Home from "./components/Home/Home";
 import GeneralCheckLists from "./components/GeneralCheckLists/GeneralCheckLists";
 
 function App() {
+  var moment = require("moment");
   return (
     <div className="App">
       <div>
@@ -19,6 +20,7 @@ function App() {
               <Navbar.Brand href="#home" className="dSLogo">
                 Dissolved Solids
               </Navbar.Brand>
+              <Navbar.Brand>{moment().format("Do MMM")}</Navbar.Brand>
             </Navbar>
             <p className="tagline">Brew Easy</p>
             <hr />
@@ -40,7 +42,7 @@ function App() {
       <Row className="copyright">
         <Col>
           <footer>
-            <center>Copyright {new Date().getFullYear()}©</center>
+            <center>Copyright {moment().format("YYYY")}©</center>
           </footer>
         </Col>
       </Row>
