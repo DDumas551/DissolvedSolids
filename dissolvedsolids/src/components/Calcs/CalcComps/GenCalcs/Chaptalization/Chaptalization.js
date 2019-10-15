@@ -106,18 +106,6 @@ class Chaptalization extends Component {
             </Row>
           </Card.Body>
         </Card>
-        <Row>
-          <Col></Col>
-          <Col></Col>
-          <Col></Col>
-          <Col></Col>
-        </Row>
-        <Row>
-          <Col></Col>
-          <Col></Col>
-          <Col> </Col>
-          <Col></Col>
-        </Row>
       </div>
     );
   }
