@@ -2,3 +2,18 @@
   text-decoration: none;
   color: black;
 }
+
+.vAgeHR {
+  margin-top: 25px;
+}
+
+#inputAge {
+  margin-top: 10px;
+}
+
+button {
+  border: 1px solid black;
+  padding: 9px 20px 9px 20px;
+  background-color: white;
+  margin-top: 25px;
+}

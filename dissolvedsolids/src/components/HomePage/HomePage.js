@@ -12,14 +12,23 @@ class HomePage extends Component {
   state = {
     ofAge: false,
     to: "/Home",
-    linkText: "Continue"
+    linkText: "continue",
+    inputAge: "10/15/2019"
   };
   render() {
+    var moment = require("moment");
+    const todaysDate = moment().format("L");
     const handleChange = () => {
       this.setState({
         ofAge: true
       });
     };
+    const handleAge = e => {
+      this.setState({
+        inputAge: e.target.value
+      });
+    };
+    console.log(todaysDate);
     const z = this.state;
     return (
       <div>
@@ -43,22 +52,24 @@ class HomePage extends Component {
           <Card className="text-center" style={{ width: "22rem" }}>
             <Card.Body>
               <Card.Title>Verify Your Age</Card.Title>
-              <hr />
+              <hr className="vAgeHR" />
               <InputGroup size="sm" className="mb-3">
-                <InputGroup.Prepend>
-                  <InputGroup.Text id="inputGroup-sizing-sm">
-                    Be honest :-P
-                  </InputGroup.Text>
-                </InputGroup.Prepend>
                 <FormControl
                   id="inputAge"
                   name="inputAge"
-                  // min={moment()}
+                  max={moment().format("L")}
+                  value={this.state.inputAge}
                   type="date"
                   aria-label="Small"
                   aria-describedby="inputGroup-sizing-sm"
+                  onChange={handleChange}
                 />
               </InputGroup>
+              <Row className="justify-content-right">
+                <Col xs={{ span: 6, offset: 6 }}>
+                  <button type="button">Verify age</button>
+                </Col>
+              </Row>
             </Card.Body>
           </Card>
         </center>
