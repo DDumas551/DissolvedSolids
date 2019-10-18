@@ -13,22 +13,23 @@ class HomePage extends Component {
     ofAge: false,
     to: "/Home",
     linkText: "continue",
-    inputAge: "10/15/2019"
+    inputAge: "2019-10-18"
   };
   render() {
     var moment = require("moment");
-    const todaysDate = moment().format("L");
-    const handleChange = () => {
-      this.setState({
-        ofAge: true
-      });
-    };
     const handleAge = e => {
       this.setState({
         inputAge: e.target.value
       });
     };
-    console.log(todaysDate);
+
+    const checkAge = age => {
+      const thisYear = parseInt(moment().format("YYYY"));
+      const monthDay = moment().format("MM-DD");
+      moment(age).isSameOrBefore(`${thisYear - 21}-${monthDay}'`)
+        ? this.setState({ ofAge: true })
+        : alert("NO KIDS ALLOWED");
+    };
     const z = this.state;
     return (
       <div>
@@ -43,7 +44,7 @@ class HomePage extends Component {
               We're here to help organize your Home Brew recipes.
             </p>
             <p className="text">
-              But before you can
+              But before you can{" "}
               <LinkSpanAC ofAge={z.ofAge} to={z.to} linktext={z.linkText} />
             </p>
           </Col>
@@ -57,17 +58,21 @@ class HomePage extends Component {
                 <FormControl
                   id="inputAge"
                   name="inputAge"
-                  max={moment().format("L")}
                   value={this.state.inputAge}
                   type="date"
                   aria-label="Small"
                   aria-describedby="inputGroup-sizing-sm"
-                  onChange={handleChange}
+                  onChange={handleAge}
                 />
               </InputGroup>
               <Row className="justify-content-right">
                 <Col xs={{ span: 6, offset: 6 }}>
-                  <button type="button">Verify age</button>
+                  <button
+                    onClick={() => checkAge(this.state.inputAge)}
+                    type="button"
+                  >
+                    Verify age
+                  </button>
                 </Col>
               </Row>
             </Card.Body>

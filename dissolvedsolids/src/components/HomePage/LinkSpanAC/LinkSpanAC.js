@@ -5,17 +5,17 @@ class LinkSpanAC extends Component {
   render() {
     if (!this.props.ofAge) {
       return (
-        <div>
-          <p>{this.props.linktext}</p>
-        </div>
+        <span>
+          <span>{this.props.linktext}:</span>
+        </span>
       );
     }
     return (
-      <div>
+      <span>
         <Link to={this.props.to}>
-          <p>{this.props.linktext}</p>
+          <span className="AClink">{this.props.linktext}:</span>
         </Link>
-      </div>
+      </span>
     );
   }
 }

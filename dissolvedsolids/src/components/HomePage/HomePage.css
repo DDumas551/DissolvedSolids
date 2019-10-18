@@ -17,3 +17,11 @@ button {
   background-color: white;
   margin-top: 25px;
 }
+
+.AClink {
+  color: white;
+  border: 1px solid black;
+  background-color: grey;
+  padding: 2px 2px 4px 5px;
+  text-decoration: none !important;
+}
