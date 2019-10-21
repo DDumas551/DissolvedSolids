@@ -6,14 +6,14 @@ class LinkSpanAC extends Component {
     if (!this.props.ofAge) {
       return (
         <span>
-          <span>{this.props.linktext}:</span>
+          <span>{this.props.linktext}</span>
         </span>
       );
     }
     return (
       <span>
         <Link to={this.props.to}>
-          <span className="AClink">{this.props.linktext}:</span>
+          <span className="AClink">{this.props.linktext}</span>
         </Link>
       </span>
     );

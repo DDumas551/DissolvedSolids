@@ -21,11 +21,22 @@ body {
 
 .dSLogo {
   font-family: header;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.date {
+  margin-right: 20px;
+  margin-top: 15px;
 }
 
 .tagline {
   margin-left: 10vw;
   font-family: lobster;
+}
+
+.homePage {
+  min-height: 93vh;
 }
 
 @media only screen and (max-width: 767px) {

@@ -12,7 +12,7 @@ class HomePage extends Component {
   state = {
     ofAge: false,
     to: "/Home",
-    linkText: "continue",
+    linkText: "Let's Go!",
     inputAge: "2019-10-18"
   };
   render() {
@@ -28,7 +28,7 @@ class HomePage extends Component {
       const monthDay = moment().format("MM-DD");
       moment(age).isSameOrBefore(`${thisYear - 21}-${monthDay}'`)
         ? this.setState({ ofAge: true })
-        : alert("NO KIDS ALLOWED");
+        : alert("You're not 21 yet!");
     };
     const z = this.state;
     return (
@@ -43,12 +43,12 @@ class HomePage extends Component {
             <p className="HPText2 text">
               We're here to help organize your Home Brew recipes.
             </p>
-            <p className="text">
-              But before you can{" "}
-              <LinkSpanAC ofAge={z.ofAge} to={z.to} linktext={z.linkText} />
-            </p>
+            <p className="text">But before you can continue:</p>
           </Col>
         </Row>
+        <center className="continueRow">
+          <LinkSpanAC ofAge={z.ofAge} to={z.to} linktext={z.linkText} />
+        </center>
         <center>
           <Card className="text-center" style={{ width: "22rem" }}>
             <Card.Body>

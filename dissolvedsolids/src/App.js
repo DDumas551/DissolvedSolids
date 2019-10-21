@@ -13,15 +13,17 @@ function App() {
   var moment = require("moment");
   return (
     <div className="App">
-      <div>
+      <div className="homePage">
         <Row>
           <Col>
-            <Navbar bg="link" expand="lg">
-              <Navbar.Brand href="#home" className="dSLogo">
-                Dissolved Solids
-              </Navbar.Brand>
-              <Navbar.Brand>{moment().format("Do MMM")}</Navbar.Brand>
-            </Navbar>
+            <h1 className="dSLogo">Dissolved Solids</h1>
+          </Col>
+          <Col>
+            <h4 className="date text-right">{moment().format("Do MMM")}</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <p className="tagline">Brew Easy</p>
             <hr />
           </Col>
