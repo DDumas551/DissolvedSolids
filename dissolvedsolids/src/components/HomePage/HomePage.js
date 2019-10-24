@@ -17,6 +17,8 @@ class HomePage extends Component {
   };
   render() {
     var moment = require("moment");
+    const { ofAge, to, linkText, inputAge } = this.state;
+
     const handleAge = e => {
       this.setState({
         inputAge: e.target.value
@@ -30,7 +32,7 @@ class HomePage extends Component {
         ? this.setState({ ofAge: true })
         : alert("You're not 21 yet!");
     };
-    const z = this.state;
+
     return (
       <div>
         <Row>
@@ -47,7 +49,7 @@ class HomePage extends Component {
           </Col>
         </Row>
         <center className="continueRow">
-          <LinkSpanAC ofAge={z.ofAge} to={z.to} linktext={z.linkText} />
+          <LinkSpanAC ofAge={ofAge} to={to} linktext={linkText} />
         </center>
         <center>
           <Card className="text-center" style={{ width: "22rem" }}>
@@ -58,7 +60,7 @@ class HomePage extends Component {
                 <FormControl
                   id="inputAge"
                   name="inputAge"
-                  value={this.state.inputAge}
+                  value={inputAge}
                   type="date"
                   aria-label="Small"
                   aria-describedby="inputGroup-sizing-sm"
@@ -67,10 +69,7 @@ class HomePage extends Component {
               </InputGroup>
               <Row className="justify-content-right">
                 <Col xs={{ span: 6, offset: 6 }}>
-                  <button
-                    onClick={() => checkAge(this.state.inputAge)}
-                    type="button"
-                  >
+                  <button onClick={() => checkAge(inputAge)} type="button">
                     Verify age
                   </button>
                 </Col>
@@ -78,35 +77,9 @@ class HomePage extends Component {
             </Card.Body>
           </Card>
         </center>
-        {/* <Row>
-          <Col>
-            <LinkSpanAC ofAge={z.ofAge} to={z.to} linktext={z.linkText} />
-          </Col>
-        </Row> */}
       </div>
     );
   }
 }
-// render () {
-//   return (
-//     <form className=”demoForm”>
-//       <h2>Sign up</h2>
-//       <div className=”form-group”>
-//         <label htmlFor=”email”>Email address</label>
-//         <input type=”email” className=”form-control”
-//           name=”email” />
-//       </div>
-//       <div className=”form-group”>
-//         <label htmlFor=”password”>Password</label>
-//         <input type=”password” className=”form-control”
-//           name=”password” />
-//       </div>
-//       <button type=”submit” className=”btn btn-primary”>
-//          Sign up
-//       </button>
-//     </form>
-//   )
-// }
-// }
 
 export default HomePage;

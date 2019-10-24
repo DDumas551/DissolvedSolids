@@ -18,6 +18,17 @@ class ABV extends Component {
   };
 
   render() {
+    const {
+      sgStart,
+      sgFinal,
+      sgABV,
+      platoStart,
+      platoFinish,
+      platoABV,
+      brixStart,
+      brixFinish,
+      brixABV
+    } = this.state;
     const handleChange = event => {
       this.setState({
         [event.target.name]: event.target.value
@@ -26,98 +37,14 @@ class ABV extends Component {
 
     return (
       <div>
-        {/* Specific Gravity */}
-        <Row>
-          <Col>
-            <h3>Calculate ABV With SG</h3>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <p>Original Gravity</p>
-            <input
-              id="originalGravity"
-              type="number"
-              name="sgStart"
-              value={this.state.sgStart}
-              min="1.000"
-              max="1.299"
-              step="0.001"
-              onChange={handleChange}
-            />
-          </Col>
-          <Col>
-            <p>Final Gravity</p>
-            <input
-              id="finalGravity"
-              type="number"
-              name="sgFinal"
-              value={this.state.sgFinal}
-              min="1.000"
-              max="1.099"
-              step="0.001"
-              onChange={handleChange}
-            />
-          </Col>
-          <Col>
-            <p>Alcohol Content</p>
-            <p id="abv">
-              {((this.state.sgStart - this.state.sgFinal) * 131.25).toFixed(2)}%
-            </p>
-          </Col>
-        </Row>
-        {/* Plato */}
-        <Row>
-          <Col>
-            <h4>Calculate ABV With Deg Plato</h4>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <p>Original Deg Plato</p>
-            <input
-              id="originalGravity"
-              type="number"
-              name="platoStart"
-              value={this.state.platoStart}
-              min="1"
-              max="100"
-              step="0.1"
-              onChange={handleChange}
-            />
-          </Col>
-          <Col>
-            <p>Final Deg Plato</p>
-            <input
-              id="finalGravity"
-              type="number"
-              name="platoFinish"
-              value={this.state.platoFinish}
-              min="0"
-              max="100"
-              step="0.1"
-              onChange={handleChange}
-            />
-          </Col>
-          <Col>
-            <p>Alcohol Content</p>
-            <p id="abv">
-              {(
-                (this.state.platoStart - this.state.platoFinish) *
-                0.52
-              ).toFixed(2)}
-              %
-            </p>
-          </Col>
-        </Row>
-        <Card style={{ width: "92%" }}>
+        <h3>Calculate Alcohol By Volume</h3>
+        <Card style={{ width: "21rem" }}>
           <Card.Body>
             <Card.Subtitle className="mb-2 text-muted">
               Specific Gravity
             </Card.Subtitle>
             <Card.Title className="text-center">
-              {((this.state.sgStart - this.state.sgFinal) * 131.25).toFixed(2)}%
-              ABV
+              {((sgStart - sgFinal) * 131.25).toFixed(2)}% ABV
             </Card.Title>
             <Card.Text>
               <Row className="justify-content-center">
@@ -128,7 +55,7 @@ class ABV extends Component {
                       id="originalGravity"
                       type="number"
                       name="sgStart"
-                      value={this.state.sgStart}
+                      value={sgStart}
                       min="1.000"
                       max="1.299"
                       step="0.001"
@@ -143,10 +70,53 @@ class ABV extends Component {
                       id="finalGravity"
                       type="number"
                       name="sgFinal"
-                      value={this.state.sgFinal}
+                      value={sgFinal}
                       min="1.000"
                       max="1.099"
                       step="0.001"
+                      onChange={handleChange}
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <br />
+        <Card style={{ width: "21rem" }}>
+          <Card.Body>
+            <Card.Subtitle className="mb-2 text-muted">Plato</Card.Subtitle>
+            <Card.Title className="text-center">
+              {((platoStart - platoFinish) * 0.52).toFixed(2)}% ABV
+            </Card.Title>
+            <Card.Text>
+              <Row className="justify-content-center">
+                <Col xs={6}>
+                  <div className="text-center">
+                    <p>Original Deg Plato</p>
+                    <input
+                      id="originalGravity"
+                      type="number"
+                      name="platoStart"
+                      value={platoStart}
+                      min="1"
+                      max="100"
+                      step="0.1"
+                      onChange={handleChange}
+                    />
+                  </div>
+                </Col>
+                <Col xs={6}>
+                  <div className="text-center">
+                    <p>Final Deg Plato</p>
+                    <input
+                      id="finalGravity"
+                      type="number"
+                      name="platoFinish"
+                      value={platoFinish}
+                      min="0"
+                      max="100"
+                      step="0.1"
                       onChange={handleChange}
                     />
                   </div>
