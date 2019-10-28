@@ -21,7 +21,7 @@ class BrixAndSG extends Component {
       <div>
         <Row>
           <Col>
-            <h3>Brix and Specific Converters</h3>
+            <h3>Brix and Specific Gravity Converters</h3>
           </Col>
         </Row>
         <Row style={{ width: "99%" }}>

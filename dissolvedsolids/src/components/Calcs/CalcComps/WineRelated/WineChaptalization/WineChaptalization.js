@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
 
 class WineChaptalization extends Component {
   state = {
@@ -9,81 +12,100 @@ class WineChaptalization extends Component {
     totalVolume: 5
   };
   render() {
-    const updateBrix = e => {
+    const handleChange = e => {
       this.setState({
         [e.target.name]: e.target.value
       });
     };
     return (
       <div>
-        <Row>
-          <Col>
-            <h4>Current Brix</h4>
-          </Col>
-          <Col>
-            <h4>Desired Brix</h4>
-          </Col>
-          <Col>
-            <h4>Total Volume (Gallons)</h4>
-          </Col>
-          <Col>
-            <h4>Sugar to Add</h4>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <input
-              id="current"
-              type="number"
-              name="currentBrix"
-              min="0"
-              max="100"
-              step="0.1"
-              value={this.state.currentBrix}
-              onChange={updateBrix}
-            />
-          </Col>
-          <Col>
-            <input
-              id="desired"
-              type="number"
-              name="desiredBrix"
-              min="1"
-              max="100"
-              step="0.1"
-              value={this.state.desiredBrix}
-              onChange={updateBrix}
-            />
-          </Col>
-          <Col>
-            {" "}
-            <input
-              id="total"
-              type="number"
-              name="totalVolume"
-              min="1"
-              max="999999"
-              step="0.1"
-              value={this.state.totalVolume}
-              onChange={updateBrix}
-            />
-          </Col>
-          <Col>
-            <p>
-              {`${(
-                ((this.state.desiredBrix - this.state.currentBrix) *
-                  this.state.totalVolume *
-                  1.5) /
-                16
-              ).toFixed(0)} Lbs ${(
-                ((this.state.desiredBrix - this.state.currentBrix) *
-                  this.state.totalVolume *
-                  1.5) %
-                16
-              ).toFixed(2)}oz`}
-            </p>
-          </Col>
-        </Row>
+        <h3>Wine Chaptalization</h3>
+        <Card style={{ width: "21rem" }}>
+          <Card.Body>
+            <Row>
+              <Col>
+                <p>Current Brix</p>
+              </Col>
+              <Col>
+                <InputGroup size="sm" className="mb-3">
+                  <FormControl
+                    id="currentBrix"
+                    type="number"
+                    name="currentBrix"
+                    min="0"
+                    max="100"
+                    step="0.1"
+                    value={this.state.currentBrix}
+                    onChange={handleChange}
+                    aria-label="Small"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </InputGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <p>Desired Brix</p>
+              </Col>
+              <Col>
+                <InputGroup size="sm" className="mb-3">
+                  <FormControl
+                    id="desiredBrix"
+                    type="number"
+                    name="desiredBrix"
+                    min="1"
+                    max="100"
+                    step="0.1"
+                    value={this.state.desiredBrix}
+                    onChange={handleChange}
+                    aria-label="Small"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </InputGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <p>Total Volume (Gallons)</p>
+              </Col>
+              <Col>
+                <InputGroup size="sm" className="mb-3">
+                  <FormControl
+                    id="totalVolume"
+                    type="number"
+                    name="totalVolume"
+                    min="1"
+                    max="999999"
+                    step="0.1"
+                    value={this.state.totalVolume}
+                    onChange={handleChange}
+                    aria-label="Small"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </InputGroup>
+              </Col>
+            </Row>
+            <hr />
+            <Row>
+              <Col>
+                <h5 className="text-center">Sugar to Add</h5>
+                <p className="text-center">
+                  {`${(
+                    ((this.state.desiredBrix - this.state.currentBrix) *
+                      this.state.totalVolume *
+                      1.5) /
+                    16
+                  ).toFixed(0)} Lbs ${(
+                    ((this.state.desiredBrix - this.state.currentBrix) *
+                      this.state.totalVolume *
+                      1.5) %
+                    16
+                  ).toFixed(2)}oz`}
+                </p>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
       </div>
     );
   }
