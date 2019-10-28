@@ -23,46 +23,48 @@ class Home extends Component {
               path="/GeneralCheckLists"
               component={GeneralCheckLists}
             />
-            <Row>
-              <Col xs={3}>
-                <Link to="/Home/AboutUs">
-                  <p className="text linkStyle">About Us</p>
-                </Link>
-                <Link to="/Home/NewToBrewing">
-                  <p className="text linkStyle">New to Brewing?</p>
-                </Link>
-                <Link to="/Home/PublicRecipies">
-                  <p className="text linkStyle">Public Recipies</p>
-                </Link>
-                <Link to="/Calcs">
-                  <p className="text linkStyle">Calculators</p>
-                </Link>
-                <Link to="/GeneralCheckLists">
-                  <p className="text linkStyle">General Check Lists</p>
-                </Link>
-                <Link to="/Home/SignUp">
-                  <p className="text linkStyle">Sign Up</p>
-                </Link>
-                <Link to="/Home/Login">
-                  <p className="text linkStyle">Log In</p>
-                </Link>
-              </Col>
-              <Col>
-                <Route exact path="/Home/AboutUs" component={AboutUs} />
-                <Route
-                  exact
-                  path="/Home/NewToBrewing"
-                  component={NewToBrewing}
-                />
-                <Route
-                  exact
-                  path="/Home/PublicRecipies"
-                  component={PublicRecipies}
-                />
-                <Route exact path="/Home/SignUp" component={SignUp} />
-                <Route exact path="/Home/Login" component={LoginPage} />
-              </Col>
-            </Row>
+            <div style={{ marginLeft: "2%" }}>
+              <Row>
+                <Col xs={3}>
+                  <Link to="/Home/AboutUs">
+                    <p className="text linkStyle">About Us</p>
+                  </Link>
+                  <Link to="/Home/NewToBrewing">
+                    <p className="text linkStyle">New to Brewing?</p>
+                  </Link>
+                  <Link to="/Home/PublicRecipies">
+                    <p className="text linkStyle">Public Recipies</p>
+                  </Link>
+                  <Link to="/Calcs">
+                    <p className="text linkStyle">Calculators</p>
+                  </Link>
+                  <Link to="/GeneralCheckLists">
+                    <p className="text linkStyle">General Check Lists</p>
+                  </Link>
+                  <Link to="/Home/SignUp">
+                    <p className="text linkStyle">Sign Up</p>
+                  </Link>
+                  <Link to="/Home/Login">
+                    <p className="text linkStyle">Log In</p>
+                  </Link>
+                </Col>
+                <Col>
+                  <Route exact path="/Home/AboutUs" component={AboutUs} />
+                  <Route
+                    exact
+                    path="/Home/NewToBrewing"
+                    component={NewToBrewing}
+                  />
+                  <Route
+                    exact
+                    path="/Home/PublicRecipies"
+                    component={PublicRecipies}
+                  />
+                  <Route exact path="/Home/SignUp" component={SignUp} />
+                  <Route exact path="/Home/Login" component={LoginPage} />
+                </Col>
+              </Row>
+            </div>
           </Switch>
         </Router>
       </div>

@@ -28,52 +28,54 @@ class GeneralCheckLists extends Component {
         </Row>
         <Router>
           <Switch>
-            <Row>
-              <Col xs={3}>
-                <Link to="/GeneralCheckLists/BrewingEquiptment">
-                  <p className="text-center">Brewing Equiptment</p>
-                </Link>
-                <Link to="/GeneralCheckLists/BrewPrep">
-                  <p className="text-center">Brew Day Prep</p>
-                </Link>
-                <Link to="/GeneralCheckLists/BrewSteps">
-                  <p className="text-center">Brew Steps</p>
-                </Link>
-                <Link to="/GeneralCheckLists/CleanUp">
-                  <p className="text-center">Clean Up</p>
-                </Link>
-                <Link to="/GeneralCheckLists/BrewSteps">
-                  <p className="text-center">Bottling or Kegging</p>
-                </Link>
-              </Col>
-              <Col>
-                <Route
-                  exact
-                  path="/GeneralCheckLists/BrewingEquiptment"
-                  component={BrewingEquiptment}
-                />
-                <Route
-                  exact
-                  path="/GeneralCheckLists/BrewPrep"
-                  component={BrewPrep}
-                />
-                <Route
-                  exact
-                  path="/GeneralCheckLists/BrewSteps"
-                  component={BrewSteps}
-                />
-                <Route
-                  exact
-                  path="/GeneralCheckLists/CleanUp"
-                  component={CleanUp}
-                />
-                <Route
-                  exact
-                  path="/GeneralCheckLists/BottlingKegging"
-                  component={BottlingKegging}
-                />
-              </Col>
-            </Row>
+            <div style={{ marginLeft: "2%" }}>
+              <Row>
+                <Col xs={3}>
+                  <Link to="/GeneralCheckLists/BrewingEquiptment">
+                    <p className="text-center">Brewing Equiptment</p>
+                  </Link>
+                  <Link to="/GeneralCheckLists/BrewPrep">
+                    <p className="text-center">Brew Day Prep</p>
+                  </Link>
+                  <Link to="/GeneralCheckLists/BrewSteps">
+                    <p className="text-center">Brew Steps</p>
+                  </Link>
+                  <Link to="/GeneralCheckLists/CleanUp">
+                    <p className="text-center">Clean Up</p>
+                  </Link>
+                  <Link to="/GeneralCheckLists/BrewSteps">
+                    <p className="text-center">Bottling or Kegging</p>
+                  </Link>
+                </Col>
+                <Col>
+                  <Route
+                    exact
+                    path="/GeneralCheckLists/BrewingEquiptment"
+                    component={BrewingEquiptment}
+                  />
+                  <Route
+                    exact
+                    path="/GeneralCheckLists/BrewPrep"
+                    component={BrewPrep}
+                  />
+                  <Route
+                    exact
+                    path="/GeneralCheckLists/BrewSteps"
+                    component={BrewSteps}
+                  />
+                  <Route
+                    exact
+                    path="/GeneralCheckLists/CleanUp"
+                    component={CleanUp}
+                  />
+                  <Route
+                    exact
+                    path="/GeneralCheckLists/BottlingKegging"
+                    component={BottlingKegging}
+                  />
+                </Col>
+              </Row>
+            </div>
           </Switch>
         </Router>
         <Link to="/Home">

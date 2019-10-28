@@ -1,3 +1,7 @@
 .userSelect {
   user-select: none;
 }
+
+.accordion {
+  margin-left: 2%;
+}

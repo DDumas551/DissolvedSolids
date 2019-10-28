@@ -40,10 +40,10 @@ import BrixAndSG from "./CalcComps/WineRelated/BrixAndSG/BrixAndSG";
 class Calcs extends Component {
   render() {
     const allCalcs = [
-      [
-        0,
-        "General Calculators",
-        [
+      {
+        id: 0,
+        groupName: "General Calculators",
+        theCalcs: [
           "ABV",
           "Hydrometer Temp",
           "IBU",
@@ -55,11 +55,11 @@ class Calcs extends Component {
           "Chaptalization",
           "LME and DME"
         ]
-      ],
-      [
-        1,
-        "All Grain",
-        [
+      },
+      {
+        id: 1,
+        groupName: "All Grain",
+        theCalcs: [
           "Mash",
           "All Grain OG FG",
           "Water Chem Basic",
@@ -67,20 +67,24 @@ class Calcs extends Component {
           "Brewhouse Efficiency",
           "Quick Infusion Calc"
         ]
-      ],
-      [2, "Extract Brewers", ["Extract OG FG"]],
-      [
-        3,
-        "Bottling Priming Kegging",
-        [
+      },
+      { id: 2, groupName: "Extract Brewers", theCalcs: ["Extract OG FG"] },
+      {
+        id: 3,
+        groupName: "Bottling Priming Kegging",
+        theCalcs: [
           "Bottling",
           "Priming",
           "Keg Carb Chart",
           "Force Carb Chart",
           "Gyle and Krausen Priming"
         ]
-      ],
-      [4, "Wine", ["Brix and SG Converstions", "Wine Chaptalization"]]
+      },
+      {
+        id: 4,
+        groupName: "Wine",
+        theCalcs: ["Brix and SG Converstions", "Wine Chaptalization"]
+      }
     ];
     const genCalcs = [
       "ABV",
@@ -115,192 +119,194 @@ class Calcs extends Component {
       <div>
         <Router>
           <Switch>
-            <Row>
-              <Col xs={4}>
-                <Accordion>
-                  <Card>
-                    <Accordion.Toggle
-                      className="userSelect"
-                      as={Card.Header}
-                      eventKey="1"
-                    >
-                      All Grain
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="1">
-                      <Card.Body>
-                        {allGrain.sort().map(calc => (
-                          <CalcLink key={calc} text={calc} />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle
-                      className="userSelect"
-                      as={Card.Header}
-                      eventKey="3"
-                    >
-                      Bottling/Priming/Kegging
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="3">
-                      <Card.Body>
-                        {bPK.sort().map(calc => (
-                          <CalcLink key={calc} text={calc} />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle
-                      className="userSelect"
-                      as={Card.Header}
-                      eventKey="2"
-                    >
-                      Extract Brewers
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="2">
-                      <Card.Body>
-                        {extractBrewers.sort().map(calc => (
-                          <CalcLink key={calc} text={calc} />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle
-                      className="userSelect"
-                      as={Card.Header}
-                      eventKey="0"
-                    >
-                      General Calculators
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="0">
-                      <Card.Body>
-                        {genCalcs.sort().map(calc => (
-                          <CalcLink key={calc} text={calc} />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle
-                      className="userSelect"
-                      as={Card.Header}
-                      eventKey="4"
-                    >
-                      Wine Related Calcs
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="4">
-                      <Card.Body>
-                        {wine.sort().map(calc => (
-                          <CalcLink key={calc} text={calc} />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                </Accordion>
-              </Col>
-              <Col>
-                {/* All Grain */}
-                <Route
-                  exact
-                  path="/Calcs/AllGrainOGFG"
-                  component={AllGrainOGFG}
-                />
-                <Route
-                  exact
-                  path="/Calcs/BrewhouseEfficiency"
-                  component={BrewhouseEff}
-                />
-                <Route
-                  exact
-                  path="/Calcs/WaterChemAdv"
-                  component={AdvWaterChem}
-                />
-                <Route
-                  exact
-                  path="/Calcs/WaterChemBasic"
-                  component={BasicWaterChem}
-                />
-                <Route exact path="/Calcs/Mash" component={Mash} />
-                <Route
-                  exact
-                  path="/Calcs/QuickInfusionCalc"
-                  component={QuickInfusion}
-                />
-                {/* Bottling/Kegging */}
-                <Route exact path="/Calcs/Bottling" component={Bottling} />
-                <Route
-                  exact
-                  path="/Calcs/ForceCarbChart"
-                  component={ForceCarb}
-                />
-                <Route
-                  exact
-                  path="/Calcs/GyleAndKrausenPriming"
-                  component={GyleAndKrausenPriming}
-                />
-                <Route exact path="/Calcs/KegCarbChart" component={KegCarb} />
-                <Route exact path="/Calcs/Priming" component={Priming} />
+            <div className="accordion">
+              <Row>
+                <Col xs={4}>
+                  <Accordion style={{ width: "18rem" }}>
+                    <Card>
+                      <Accordion.Toggle
+                        className="userSelect"
+                        as={Card.Header}
+                        eventKey="1"
+                      >
+                        All Grain
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="1">
+                        <Card.Body>
+                          {allGrain.sort().map(calc => (
+                            <CalcLink key={calc} text={calc} />
+                          ))}
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle
+                        className="userSelect"
+                        as={Card.Header}
+                        eventKey="3"
+                      >
+                        Bottling/Priming/Kegging
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="3">
+                        <Card.Body>
+                          {bPK.sort().map(calc => (
+                            <CalcLink key={calc} text={calc} />
+                          ))}
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle
+                        className="userSelect"
+                        as={Card.Header}
+                        eventKey="2"
+                      >
+                        Extract Brewers
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="2">
+                        <Card.Body>
+                          {extractBrewers.sort().map(calc => (
+                            <CalcLink key={calc} text={calc} />
+                          ))}
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle
+                        className="userSelect"
+                        as={Card.Header}
+                        eventKey="0"
+                      >
+                        General Calculators
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                          {genCalcs.sort().map(calc => (
+                            <CalcLink key={calc} text={calc} />
+                          ))}
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle
+                        className="userSelect"
+                        as={Card.Header}
+                        eventKey="4"
+                      >
+                        Wine Related Calcs
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="4">
+                        <Card.Body>
+                          {wine.sort().map(calc => (
+                            <CalcLink key={calc} text={calc} />
+                          ))}
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                  </Accordion>
+                </Col>
+                <Col>
+                  {/* All Grain */}
+                  <Route
+                    exact
+                    path="/Calcs/AllGrainOGFG"
+                    component={AllGrainOGFG}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/BrewhouseEfficiency"
+                    component={BrewhouseEff}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/WaterChemAdv"
+                    component={AdvWaterChem}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/WaterChemBasic"
+                    component={BasicWaterChem}
+                  />
+                  <Route exact path="/Calcs/Mash" component={Mash} />
+                  <Route
+                    exact
+                    path="/Calcs/QuickInfusionCalc"
+                    component={QuickInfusion}
+                  />
+                  {/* Bottling/Kegging */}
+                  <Route exact path="/Calcs/Bottling" component={Bottling} />
+                  <Route
+                    exact
+                    path="/Calcs/ForceCarbChart"
+                    component={ForceCarb}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/GyleAndKrausenPriming"
+                    component={GyleAndKrausenPriming}
+                  />
+                  <Route exact path="/Calcs/KegCarbChart" component={KegCarb} />
+                  <Route exact path="/Calcs/Priming" component={Priming} />
 
-                {/* Extract Brewers */}
-                <Route
-                  exact
-                  path="/Calcs/ExtractOGFG"
-                  component={ExtractOGFG}
-                />
-                {/* General Calcs */}
-                <Route exact path="/Calcs/ABV" component={ABV} />
-                <Route
-                  exact
-                  path="/Calcs/BrixConverter"
-                  component={BrixConverter}
-                />
-                <Route
-                  exact
-                  path="/Calcs/Chaptalization"
-                  component={Chaptalization}
-                />
-                <Route
-                  exact
-                  path="/Calcs/DilutionAndBoilOff"
-                  component={DilutionAndBoilOff}
-                />
-                <Route
-                  exact
-                  path="/Calcs/HydrometerTemp"
-                  component={HydrometerTemp}
-                />
-                <Route exact path="/Calcs/IBU" component={IBU} />
-                <Route exact path="/Calcs/LMEandDME" component={LMEandDME} />
-                <Route
-                  exact
-                  path="/Calcs/Refractometer"
-                  component={Refractometer}
-                />
-                <Route exact path="/Calcs/SRM" component={SRM} />
-                <Route
-                  exact
-                  path="/Calcs/YeastPitchRateAndStarter"
-                  component={YeastPitchRateAndStarter}
-                />
-                {/* Wine */}
-                <Route
-                  exact
-                  path="/Calcs/BrixAndSGConversions"
-                  component={BrixAndSG}
-                />
-                <Route
-                  exact
-                  path="/Calcs/WineChaptalization"
-                  component={WineChaptalization}
-                />
+                  {/* Extract Brewers */}
+                  <Route
+                    exact
+                    path="/Calcs/ExtractOGFG"
+                    component={ExtractOGFG}
+                  />
+                  {/* General Calcs */}
+                  <Route exact path="/Calcs/ABV" component={ABV} />
+                  <Route
+                    exact
+                    path="/Calcs/BrixConverter"
+                    component={BrixConverter}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/Chaptalization"
+                    component={Chaptalization}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/DilutionAndBoilOff"
+                    component={DilutionAndBoilOff}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/HydrometerTemp"
+                    component={HydrometerTemp}
+                  />
+                  <Route exact path="/Calcs/IBU" component={IBU} />
+                  <Route exact path="/Calcs/LMEandDME" component={LMEandDME} />
+                  <Route
+                    exact
+                    path="/Calcs/Refractometer"
+                    component={Refractometer}
+                  />
+                  <Route exact path="/Calcs/SRM" component={SRM} />
+                  <Route
+                    exact
+                    path="/Calcs/YeastPitchRateAndStarter"
+                    component={YeastPitchRateAndStarter}
+                  />
+                  {/* Wine */}
+                  <Route
+                    exact
+                    path="/Calcs/BrixAndSGConversions"
+                    component={BrixAndSG}
+                  />
+                  <Route
+                    exact
+                    path="/Calcs/WineChaptalization"
+                    component={WineChaptalization}
+                  />
 
-                {/* <Accordion>
+                  {/* <Accordion>
               <CalcLinkTest key={allCalcs.id} info={allCalcs} />
             </Accordion> */}
-              </Col>
-            </Row>
+                </Col>
+              </Row>
+            </div>
           </Switch>
         </Router>
         <Row>
