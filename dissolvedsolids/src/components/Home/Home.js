@@ -25,29 +25,31 @@ class Home extends Component {
             />
             <div style={{ marginLeft: "2%" }}>
               <Row>
-                <Col xs={3}>
-                  <Link to="/Home/AboutUs">
-                    <p className="text linkStyle">About Us</p>
-                  </Link>
-                  <Link to="/Home/NewToBrewing">
-                    <p className="text linkStyle">New to Brewing?</p>
-                  </Link>
-                  <Link to="/Home/PublicRecipies">
-                    <p className="text linkStyle">Public Recipies</p>
-                  </Link>
-                  <Link to="/Calcs">
-                    <p className="text linkStyle">Calculators</p>
-                  </Link>
-                  <Link to="/GeneralCheckLists">
-                    <p className="text linkStyle">General Check Lists</p>
-                  </Link>
-                  <Link to="/Home/SignUp">
-                    <p className="text linkStyle">Sign Up</p>
-                  </Link>
-                  <Link to="/Home/Login">
-                    <p className="text linkStyle">Log In</p>
-                  </Link>
-                </Col>
+                <div>
+                  <Col>
+                    <Link to="/Home/AboutUs">
+                      <p className="text linkStyle">About Us</p>
+                    </Link>
+                    <Link to="/Home/NewToBrewing">
+                      <p className="text linkStyle">New to Brewing?</p>
+                    </Link>
+                    <Link to="/Home/PublicRecipies">
+                      <p className="text linkStyle">Public Recipies</p>
+                    </Link>
+                    <Link to="/Calcs">
+                      <p className="text linkStyle">Calculators</p>
+                    </Link>
+                    <Link to="/GeneralCheckLists">
+                      <p className="text linkStyle">General Check Lists</p>
+                    </Link>
+                    <Link to="/Home/SignUp">
+                      <p className="text linkStyle">Sign Up</p>
+                    </Link>
+                    <Link to="/Home/Login">
+                      <p className="text linkStyle">Log In</p>
+                    </Link>
+                  </Col>
+                </div>
                 <Col>
                   <Route exact path="/Home/AboutUs" component={AboutUs} />
                   <Route

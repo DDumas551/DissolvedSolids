@@ -32,7 +32,7 @@ class BrewingEquiptment extends Component {
     return (
       <div>
         <Row>
-          <Col xs={8}>
+          <Col xs={7} sm={6} md={6} lg={5}>
             <Table striped bordered hover size="sm">
               <thead>
                 <tr>

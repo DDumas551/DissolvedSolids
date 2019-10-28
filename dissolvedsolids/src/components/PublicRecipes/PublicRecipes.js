@@ -8,7 +8,7 @@ class PublicRecipes extends Component {
   render() {
     return (
       <div>
-        <p>PublicRecipes</p>
+        <p>Public Recipes Coming Soon!</p>
       </div>
     );
   }

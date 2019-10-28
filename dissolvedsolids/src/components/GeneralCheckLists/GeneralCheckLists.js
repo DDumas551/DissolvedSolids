@@ -14,9 +14,11 @@ class GeneralCheckLists extends Component {
     return (
       <div>
         <Row>
-          <Col xs={3}>
-            <h3 className="text-center">Check Lists!</h3>
-          </Col>
+          <div style={{ marginLeft: "2%" }} className="checklists">
+            <Col>
+              <h3>Check Lists!</h3>
+            </Col>
+          </div>
           <Col>
             <p>
               These are general checklists. Not specific to any brew,
@@ -30,23 +32,25 @@ class GeneralCheckLists extends Component {
           <Switch>
             <div style={{ marginLeft: "2%" }}>
               <Row>
-                <Col xs={3}>
-                  <Link to="/GeneralCheckLists/BrewingEquiptment">
-                    <p className="text-center">Brewing Equiptment</p>
-                  </Link>
-                  <Link to="/GeneralCheckLists/BrewPrep">
-                    <p className="text-center">Brew Day Prep</p>
-                  </Link>
-                  <Link to="/GeneralCheckLists/BrewSteps">
-                    <p className="text-center">Brew Steps</p>
-                  </Link>
-                  <Link to="/GeneralCheckLists/CleanUp">
-                    <p className="text-center">Clean Up</p>
-                  </Link>
-                  <Link to="/GeneralCheckLists/BrewSteps">
-                    <p className="text-center">Bottling or Kegging</p>
-                  </Link>
-                </Col>
+                <div>
+                  <Col>
+                    <Link to="/GeneralCheckLists/BrewingEquiptment">
+                      <p className="text-center">Brewing Equiptment</p>
+                    </Link>
+                    <Link to="/GeneralCheckLists/BrewPrep">
+                      <p className="text-center">Brew Day Prep</p>
+                    </Link>
+                    <Link to="/GeneralCheckLists/BrewSteps">
+                      <p className="text-center">Brew Steps</p>
+                    </Link>
+                    <Link to="/GeneralCheckLists/CleanUp">
+                      <p className="text-center">Clean Up</p>
+                    </Link>
+                    <Link to="/GeneralCheckLists/BrewSteps">
+                      <p className="text-center">Bottling or Kegging</p>
+                    </Link>
+                  </Col>
+                </div>
                 <Col>
                   <Route
                     exact
@@ -79,7 +83,7 @@ class GeneralCheckLists extends Component {
           </Switch>
         </Router>
         <Link to="/Home">
-          <p className="text-center">Home</p>
+          <p>Home</p>
         </Link>
       </div>
     );

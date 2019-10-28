@@ -121,90 +121,92 @@ class Calcs extends Component {
           <Switch>
             <div className="accordion">
               <Row>
-                <Col xs={4}>
-                  <Accordion style={{ width: "18rem" }}>
-                    <Card>
-                      <Accordion.Toggle
-                        className="userSelect"
-                        as={Card.Header}
-                        eventKey="1"
-                      >
-                        All Grain
-                      </Accordion.Toggle>
-                      <Accordion.Collapse eventKey="1">
-                        <Card.Body>
-                          {allGrain.sort().map(calc => (
-                            <CalcLink key={calc} text={calc} />
-                          ))}
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                      <Accordion.Toggle
-                        className="userSelect"
-                        as={Card.Header}
-                        eventKey="3"
-                      >
-                        Bottling/Priming/Kegging
-                      </Accordion.Toggle>
-                      <Accordion.Collapse eventKey="3">
-                        <Card.Body>
-                          {bPK.sort().map(calc => (
-                            <CalcLink key={calc} text={calc} />
-                          ))}
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                      <Accordion.Toggle
-                        className="userSelect"
-                        as={Card.Header}
-                        eventKey="2"
-                      >
-                        Extract Brewers
-                      </Accordion.Toggle>
-                      <Accordion.Collapse eventKey="2">
-                        <Card.Body>
-                          {extractBrewers.sort().map(calc => (
-                            <CalcLink key={calc} text={calc} />
-                          ))}
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                      <Accordion.Toggle
-                        className="userSelect"
-                        as={Card.Header}
-                        eventKey="0"
-                      >
-                        General Calculators
-                      </Accordion.Toggle>
-                      <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                          {genCalcs.sort().map(calc => (
-                            <CalcLink key={calc} text={calc} />
-                          ))}
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                      <Accordion.Toggle
-                        className="userSelect"
-                        as={Card.Header}
-                        eventKey="4"
-                      >
-                        Wine Related Calcs
-                      </Accordion.Toggle>
-                      <Accordion.Collapse eventKey="4">
-                        <Card.Body>
-                          {wine.sort().map(calc => (
-                            <CalcLink key={calc} text={calc} />
-                          ))}
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                  </Accordion>
-                </Col>
+                <div>
+                  <Col>
+                    <Accordion style={{ width: "18rem" }}>
+                      <Card>
+                        <Accordion.Toggle
+                          className="userSelect"
+                          as={Card.Header}
+                          eventKey="1"
+                        >
+                          All Grain
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="1">
+                          <Card.Body>
+                            {allGrain.sort().map(calc => (
+                              <CalcLink key={calc} text={calc} />
+                            ))}
+                          </Card.Body>
+                        </Accordion.Collapse>
+                      </Card>
+                      <Card>
+                        <Accordion.Toggle
+                          className="userSelect"
+                          as={Card.Header}
+                          eventKey="3"
+                        >
+                          Bottling/Priming/Kegging
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="3">
+                          <Card.Body>
+                            {bPK.sort().map(calc => (
+                              <CalcLink key={calc} text={calc} />
+                            ))}
+                          </Card.Body>
+                        </Accordion.Collapse>
+                      </Card>
+                      <Card>
+                        <Accordion.Toggle
+                          className="userSelect"
+                          as={Card.Header}
+                          eventKey="2"
+                        >
+                          Extract Brewers
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="2">
+                          <Card.Body>
+                            {extractBrewers.sort().map(calc => (
+                              <CalcLink key={calc} text={calc} />
+                            ))}
+                          </Card.Body>
+                        </Accordion.Collapse>
+                      </Card>
+                      <Card>
+                        <Accordion.Toggle
+                          className="userSelect"
+                          as={Card.Header}
+                          eventKey="0"
+                        >
+                          General Calculators
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                          <Card.Body>
+                            {genCalcs.sort().map(calc => (
+                              <CalcLink key={calc} text={calc} />
+                            ))}
+                          </Card.Body>
+                        </Accordion.Collapse>
+                      </Card>
+                      <Card>
+                        <Accordion.Toggle
+                          className="userSelect"
+                          as={Card.Header}
+                          eventKey="4"
+                        >
+                          Wine Related Calcs
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="4">
+                          <Card.Body>
+                            {wine.sort().map(calc => (
+                              <CalcLink key={calc} text={calc} />
+                            ))}
+                          </Card.Body>
+                        </Accordion.Collapse>
+                      </Card>
+                    </Accordion>
+                  </Col>
+                </div>
                 <Col>
                   {/* All Grain */}
                   <Route
