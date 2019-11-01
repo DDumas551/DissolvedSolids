@@ -26,7 +26,7 @@ class LMEandDME extends Component {
 
         <Row style={{ width: "99%" }}>
           <Col xs={6}>
-            <Card style={{ width: "100%" }}>
+            <Card className="cardShadow" style={{ width: "100%" }}>
               <Card.Body>
                 <Card.Title className="text-center">LME to DME</Card.Title>
                 <Row>

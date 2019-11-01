@@ -26,7 +26,7 @@ class BrixAndSG extends Component {
         </Row>
         <Row style={{ width: "99%" }}>
           <Col xs={6}>
-            <Card style={{ width: "100%" }}>
+            <Card className="cardShadow" style={{ width: "100%" }}>
               <Card.Body>
                 <Card.Title className="text-center">Brix to SG</Card.Title>
                 <Row>
@@ -65,7 +65,7 @@ class BrixAndSG extends Component {
             </Card>
           </Col>
           <Col xs={6}>
-            <Card style={{ width: "100%" }}>
+            <Card className="cardShadow" style={{ width: "100%" }}>
               <Card.Body>
                 <Card.Title className="text-center">SG to Brix</Card.Title>
                 <Row>

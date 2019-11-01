@@ -52,7 +52,7 @@ class HomePage extends Component {
           <LinkSpanAC ofAge={ofAge} to={to} linktext={linkText} />
         </center>
         <center>
-          <Card className="text-center" style={{ width: "22rem" }}>
+          <Card className="text-center cardShadow" style={{ width: "22rem" }}>
             <Card.Body>
               <Card.Title>Verify Your Age</Card.Title>
               <hr className="vAgeHR" />

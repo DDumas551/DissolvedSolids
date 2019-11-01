@@ -23,7 +23,7 @@ class HydrometerTemp extends Component {
           This calculator is to be used to adjust the Specific Gravity reading
           of your hydrometer
         </p>
-        <Card style={{ width: "21rem" }}>
+        <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
             <Row>
               <Col>

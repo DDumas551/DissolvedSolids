@@ -9,6 +9,7 @@ import Home from "./components/Home/Home";
 import GeneralCheckLists from "./components/GeneralCheckLists/GeneralCheckLists";
 
 function App() {
+  const boxShadow = "box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.2);";
   var moment = require("moment");
   return (
     <div className="App">
@@ -29,9 +30,9 @@ function App() {
         <Row>
           <Col>
             <p className="tagline">Brew Easy</p>
-            <hr />
           </Col>
         </Row>
+        <hr />
         <Router>
           <Switch>
             <Route exact path="/" component={HomePage} />

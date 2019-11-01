@@ -20,7 +20,7 @@ class WineChaptalization extends Component {
     return (
       <div>
         <h3>Wine Chaptalization</h3>
-        <Card style={{ width: "21rem" }}>
+        <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
             <Row>
               <Col>

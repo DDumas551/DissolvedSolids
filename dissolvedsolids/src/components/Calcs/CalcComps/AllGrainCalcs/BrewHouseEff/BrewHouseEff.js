@@ -23,7 +23,7 @@ class BrewhouseEff extends Component {
     return (
       <div>
         <h3>Brewhouse Efficiency</h3>
-        <Card style={{ width: "21rem" }}>
+        <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
             <Row>
               <Col>

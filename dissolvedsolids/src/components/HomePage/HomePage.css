@@ -18,6 +18,10 @@ button {
   margin-top: 25px;
 }
 
+.vAgeCard {
+  box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.2);
+}
+
 .continueRow {
   margin-bottom: 14px;
 }

@@ -20,7 +20,7 @@ class Bottling extends Component {
 
     return (
       <div>
-        <Card style={{ width: "21rem" }}>
+        <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
             <Card.Title className="text-center">{`${totalVolumeOz} oz = ${(
               totalVolumeOz / 128

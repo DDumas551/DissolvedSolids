@@ -38,7 +38,7 @@ class ABV extends Component {
     return (
       <div>
         <h3>Calculate Alcohol By Volume</h3>
-        <Card style={{ width: "21rem" }}>
+        <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
             <Card.Subtitle className="mb-2 text-muted">
               Specific Gravity
@@ -83,7 +83,7 @@ class ABV extends Component {
           </Card.Body>
         </Card>
         <br />
-        <Card style={{ width: "21rem" }}>
+        <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
             <Card.Subtitle className="mb-2 text-muted">Plato</Card.Subtitle>
             <Card.Title className="text-center">

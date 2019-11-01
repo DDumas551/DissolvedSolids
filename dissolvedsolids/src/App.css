@@ -39,6 +39,10 @@ body {
   min-height: 93vh;
 }
 
+.cardShadow {
+  box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.2);
+}
+
 @media only screen and (max-width: 767px) {
   .dSLogo {
     font-size: 26px;
