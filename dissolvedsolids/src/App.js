@@ -19,6 +19,11 @@ function App() {
           </Col>
           <Col>
             <h4 className="date text-right">{moment().format("Do MMM")}</h4>
+            <p className="text-right">
+              {moment().format("Do MMM") == "31st Oct"
+                ? "It's Spooky Time!"
+                : ""}
+            </p>
           </Col>
         </Row>
         <Row>
