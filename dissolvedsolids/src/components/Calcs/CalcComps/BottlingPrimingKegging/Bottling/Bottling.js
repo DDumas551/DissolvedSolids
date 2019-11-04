@@ -20,6 +20,7 @@ class Bottling extends Component {
 
     return (
       <div>
+        <h3>Bottling/Racking</h3>
         <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
             <Card.Title className="text-center">{`${totalVolumeOz} oz = ${(
@@ -31,13 +32,15 @@ class Bottling extends Component {
             <Row>
               <Col>
                 <center>
-                  <input
+                  <FormControl
                     id="totalVolumeOz"
                     type="number"
                     name="totalVolumeOz"
                     className="bottlingInput"
                     value={totalVolumeOz}
                     onChange={handleChange}
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
                   />
                 </center>
               </Col>

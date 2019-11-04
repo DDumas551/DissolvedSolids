@@ -76,7 +76,7 @@ class Chaptalization extends Component {
                     name="totalVolume"
                     min="1"
                     max="999999"
-                    step="0.1"
+                    step="0.01"
                     value={this.state.totalVolume}
                     onChange={handleChange}
                     aria-label="Small"

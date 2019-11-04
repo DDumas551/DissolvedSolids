@@ -123,7 +123,10 @@ class Calcs extends Component {
               <Row>
                 <div>
                   <Col>
-                    <Accordion style={{ width: "18rem" }}>
+                    <Accordion
+                      className="cardShadow"
+                      style={{ width: "18rem" }}
+                    >
                       <Card>
                         <Accordion.Toggle
                           className="userSelect"
