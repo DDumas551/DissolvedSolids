@@ -8,7 +8,11 @@ class LoginPage extends Component {
     return (
       <div>
         <h3>Log in to Dissolved Solids!</h3>
-        <Form className="signupBox" style={{ maxWidth: "25rem" }} method="post">
+        <Form
+          className="signupBox cardShadow"
+          style={{ maxWidth: "25rem" }}
+          method="post"
+        >
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
             <Form.Control
@@ -17,9 +21,6 @@ class LoginPage extends Component {
               name="username"
               // onChange={handleChange}
             />
-            {/* <p style={{ fontSize: "10px" }} className="text-muted">
-              Must contain at least one lowercase letter
-            </p> */}
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
@@ -30,10 +31,6 @@ class LoginPage extends Component {
               // value={password}
               // onChange={handleChange}
             />
-            {/* <p style={{ fontSize: "10px" }} className="text-muted">
-              Must contain a lowercase and uppercase, a number, and a special
-              character
-            </p> */}
           </Form.Group>
           <button
             id="login"

@@ -37,7 +37,11 @@ class SignUp extends Component {
     return (
       <div>
         <h3>Create a username and password</h3>
-        <Form className="signupBox" style={{ maxWidth: "25rem" }} method="post">
+        <Form
+          className="signupBox carcShadow"
+          style={{ maxWidth: "25rem" }}
+          method="post"
+        >
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
             <Form.Control

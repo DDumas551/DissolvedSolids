@@ -33,7 +33,7 @@ class BrewingEquiptment extends Component {
       <div>
         <Row>
           <Col xs={7} sm={6} md={6} lg={5}>
-            <Table striped bordered hover size="sm">
+            <Table className="cardShadow" striped bordered hover size="sm">
               <thead>
                 <tr>
                   <th>Item</th>

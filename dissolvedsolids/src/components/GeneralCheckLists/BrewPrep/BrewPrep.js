@@ -15,7 +15,7 @@ class BrewPrep extends Component {
       <div>
         <Row>
           <Col xs={8}>
-            <Table striped bordered hover size="sm">
+            <Table className="cardShadow" striped bordered hover size="sm">
               <thead>
                 <tr>
                   <th>Action</th>
@@ -24,8 +24,6 @@ class BrewPrep extends Component {
                 </tr>
               </thead>
               <tbody>
-                {/* Figure out how to disable one box when other is checked */}
-                {/* document.getElementById("checkBox").disabled=true; */}
                 {BrewPrepSteps.map(action => (
                   <tr>
                     <td>{action}</td>
