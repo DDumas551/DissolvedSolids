@@ -23,6 +23,7 @@ body {
   font-family: header;
   margin-left: 25px;
   margin-top: 10px;
+  text-shadow: 0, 0, 5, grey;
 }
 
 .date {
