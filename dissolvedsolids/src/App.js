@@ -24,6 +24,9 @@ function App() {
               {moment().format("Do MMM") == "31st Oct"
                 ? "It's Spooky Time!"
                 : ""}
+              {moment().format("Do MMM") == "25th Dec"
+                ? "Merry Christmas!"
+                : ""}
             </p>
           </Col>
         </Row>
