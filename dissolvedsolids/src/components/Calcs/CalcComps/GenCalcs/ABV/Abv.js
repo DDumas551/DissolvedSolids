@@ -1,8 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import "../ABV/ABV.css";
+
+function AlcoholByVolume() {
+  const [sgStart, setSgStart] = useState([
+    {
+      sgStart: 1.001
+    }
+  ]);
+  const [sgFinal, setSgFinal] = useState([
+    {
+      sgFinal: 1.0
+    }
+  ]);
+  const [platoStart, setPlatoStart] = useState([
+    {
+      platoStart: 1.0
+    }
+  ]);
+  const [platoFinish, setPlatoFinish] = useState([
+    {
+      platoFinish: 0.0
+    }
+  ]);
+  return <div>{sgStart}</div>;
+}
+
+// project management
+// product d
 
 class ABV extends Component {
   state = {
@@ -18,17 +45,7 @@ class ABV extends Component {
   };
 
   render() {
-    const {
-      sgStart,
-      sgFinal,
-      sgABV,
-      platoStart,
-      platoFinish,
-      platoABV,
-      brixStart,
-      brixFinish,
-      brixABV
-    } = this.state;
+    const { sgStart, sgFinal, platoStart, platoFinish } = this.state;
     const handleChange = event => {
       this.setState({
         [event.target.name]: event.target.value
@@ -37,6 +54,7 @@ class ABV extends Component {
 
     return (
       <div>
+        <AlcoholByVolume />
         <h3>Calculate Alcohol By Volume</h3>
         <Card className="cardShadow" style={{ width: "21rem" }}>
           <Card.Body>
